@@ -7,11 +7,30 @@ import Experience from "./components/Experience";
 import Research from "./components/Research";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
+import SpaceBackground from "./components/SpaceBackground";
+
+
 function App(){
 
 return(
 
-<div>
+<div className="relative min-h-screen bg-[#080014]">
+
+
+{/* Space Animation */}
+
+<div className="fixed inset-0 -z-0">
+
+<SpaceBackground />
+
+</div>
+
+
+
+{/* Website Content */}
+
+<div className="relative z-10">
+
 
 <Navbar/>
 
@@ -30,6 +49,10 @@ return(
 <Certificates/>
 
 <Contact/>
+
+
+</div>
+
 
 </div>
 
