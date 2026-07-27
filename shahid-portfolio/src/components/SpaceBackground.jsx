@@ -18,9 +18,7 @@ function Planet({ texture, position, size }) {
   useFrame(() => {
 
     if (planetRef.current) {
-
-      planetRef.current.rotation.y += 0.003;
-
+      planetRef.current.rotation.y += 0.004;
     }
 
   });
@@ -37,13 +35,17 @@ function Planet({ texture, position, size }) {
         args={[size,64,64]}
       />
 
+
       <meshStandardMaterial
 
         map={image}
 
-        roughness={0.7}
+        roughness={0.6}
+
+        metalness={0.1}
 
       />
+
 
     </mesh>
 
@@ -53,10 +55,7 @@ function Planet({ texture, position, size }) {
 
 
 
-
-
-// Stars
-
+// Moving Stars
 function MovingStars(){
 
   const starsRef = useRef();
@@ -64,27 +63,26 @@ function MovingStars(){
 
   const positions = useMemo(()=>{
 
-    const arr = new Float32Array(9000*3);
+    const arr = new Float32Array(7000 * 3);
 
 
-    for(let i=0;i<9000;i++){
+    for(let i=0;i<7000;i++){
 
-
-      const radius = 120 + Math.random()*180;
+      const radius = 40 + Math.random()*80;
 
       const angle = Math.random()*Math.PI*2;
 
 
       arr[i*3] =
-        Math.cos(angle)*radius;
+      Math.cos(angle)*radius;
 
 
       arr[i*3+1] =
-        (Math.random()-0.5)*200;
+      (Math.random()-0.5)*80;
 
 
       arr[i*3+2] =
-        Math.sin(angle)*radius-150;
+      Math.sin(angle)*radius;
 
 
     }
@@ -99,33 +97,30 @@ function MovingStars(){
 
   useFrame(()=>{
 
-
     if(starsRef.current){
 
-      starsRef.current.rotation.y += 0.0005;
+      starsRef.current.rotation.y += 0.001;
 
-      starsRef.current.rotation.z += 0.0001;
+      starsRef.current.rotation.x += 0.0002;
 
     }
-
 
   });
 
 
 
-  return(
+  return (
 
     <points ref={starsRef}>
 
 
       <bufferGeometry>
 
-
         <bufferAttribute
 
           attach="attributes-position"
 
-          count={9000}
+          count={7000}
 
           array={positions}
 
@@ -138,7 +133,7 @@ function MovingStars(){
 
       <pointsMaterial
 
-        size={0.012}
+        size={0.015}
 
         color="white"
 
@@ -155,53 +150,37 @@ function MovingStars(){
 
 
 
-
-
 function SpaceScene(){
 
-return(
+
+return (
 
 <>
 
 
-{/* Better Earth Lighting */}
+{/* Lighting */}
 
-<ambientLight intensity={0.5}/>
+<ambientLight intensity={0.4}/>
 
 
 <directionalLight
 
-position={[10,5,5]}
+position={[5,5,5]}
 
-intensity={8}
+intensity={2.5}
 
 />
-
 
 
 <pointLight
 
-position={[8,3,5]}
+position={[3,2,4]}
 
-intensity={6}
+intensity={4}
 
-color="#fff0c0"
-
-/>
-
-
-
-<pointLight
-
-position={[-8,0,-5]}
-
-intensity={2}
-
-color="#4466ff"
+color="#ffe6b3"
 
 />
-
-
 
 
 
@@ -211,15 +190,15 @@ color="#4466ff"
 
 
 
-{/* Earth - Front */}
+{/* Earth Front */}
 
 <Planet
 
 texture="earth"
 
-position={[0,0,2]}
+position={[0,0,0]}
 
-size={2.7}
+size={2.5}
 
 />
 
@@ -227,17 +206,15 @@ size={2.7}
 
 
 
-{/* Very Far Planets */}
-
-
+{/* Other Planets */}
 
 <Planet
 
 texture="jupiter"
 
-position={[-35,12,-90]}
+position={[-10,3,-8]}
 
-size={5}
+size={3.2}
 
 />
 
@@ -247,9 +224,9 @@ size={5}
 
 texture="mars"
 
-position={[40,5,-80]}
+position={[10,2,-12]}
 
-size={3}
+size={2}
 
 />
 
@@ -259,9 +236,9 @@ size={3}
 
 texture="venus"
 
-position={[-35,-15,-75]}
+position={[-8,-4,-15]}
 
-size={2.8}
+size={2.2}
 
 />
 
@@ -271,9 +248,9 @@ size={2.8}
 
 texture="mercury"
 
-position={[35,15,-100]}
+position={[9,-3,-18]}
 
-size={2}
+size={1.5}
 
 />
 
@@ -283,8 +260,8 @@ size={2}
 
 );
 
-}
 
+}
 
 
 
@@ -293,16 +270,19 @@ size={2}
 
 export default function SpaceBackground(){
 
-return(
 
-<div className="fixed inset-0">
+return (
+
+<div className="fixed inset-0 bg-black">
 
 
 <Canvas
 
 camera={{
 
-position:[0,0,15]
+position:[0,0,12],
+
+fov:45
 
 }}
 
@@ -316,6 +296,10 @@ position:[0,0,15]
 
 enableZoom={false}
 
+autoRotate
+
+autoRotateSpeed={0.3}
+
 />
 
 
@@ -325,5 +309,6 @@ enableZoom={false}
 </div>
 
 );
+
 
 }
