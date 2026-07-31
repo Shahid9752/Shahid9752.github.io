@@ -1,329 +1,542 @@
-function Certificates(){
+import { useState } from "react";
 
-const certificates = [
 
-{
-title:"Ethical Hacking and Cybersecurity",
-issuer:"Arena Web Security",
-details:
-"Completed training focused on ethical hacking, cybersecurity fundamentals, web application security, vulnerability assessment and penetration testing."
-}
+function Certificates() {
 
-];
+  const [selectedImage, setSelectedImage] = useState(null);
 
 
+  const certificates = [
 
-return(
+    {
+      title: "Ethical Hacking & Cybersecurity",
+      issuer: "Arena Web Security",
+      image: "/certificate.jpg",
 
-<section
+      details:
+        "Completed training focused on ethical hacking, cybersecurity fundamentals, web application security, vulnerability assessment and penetration testing."
+    },
 
-id="certificates"
 
-className="
+    {
+      title: "Corporate Internship Certificate",
+      issuer: "Arena Web Security",
+      image: "/intern.jpg",
 
-text-white
+      details:
+        "Completed a corporate internship with practical exposure to professional work environments, operational activities and technology-related tasks."
+    }
 
-px-6
+  ];
 
-md:px-8
 
-py-16
+  return (
 
-md:py-20
+    <section
 
-"
+      id="certificates"
 
->
+      className="
+        text-white
 
+        px-6
+        md:px-8
 
-<div className="max-w-6xl mx-auto">
+        py-16
+        md:py-20
+      "
 
+    >
 
+      <div className="max-w-6xl mx-auto">
 
-<h2
 
-className="
+        {/* Section Title */}
 
-text-3xl
+        <h2
 
-md:text-4xl
+          className="
+            text-3xl
+            md:text-4xl
 
+            font-bold
+            font-mono
 
-font-bold
+            text-green-400
 
+            mb-10
 
-text-purple-400
+            text-center
+            md:text-left
 
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.7)]
+          "
 
-mb-10
+        >
 
+          $ ls /certificates
 
+        </h2>
 
-text-center
 
-md:text-left
 
+        {/* Terminal Header */}
 
+        <div
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+          className="
+            bg-black/70
 
+            border
+            border-green-500/30
 
-transition
+            rounded-xl
 
-"
+            px-5
+            py-4
 
->
+            mb-8
 
-Certificates
+            font-mono
 
-</h2>
+            text-sm
 
+            text-gray-400
+          "
 
+        >
 
+          <span className="text-green-400">
+            root@shahid:~$
+          </span>
 
+          {" "}
 
+          loading_credentials...
 
+          <span className="text-green-400 ml-2">
+            [VERIFIED]
+          </span>
 
-<div
+        </div>
 
-className="
 
-grid
 
-grid-cols-1
+        {/* Certificates Grid */}
 
-md:grid-cols-2
+        <div
 
+          className="
+            grid
 
-gap-8
+            grid-cols-1
+            md:grid-cols-2
 
-"
+            gap-8
+          "
 
->
+        >
 
+          {certificates.map((cert, index) => (
 
-{
+            <div
 
-certificates.map((cert,index)=>(
+              key={index}
 
+              className="
+                group
 
-<div
+                bg-black/60
 
-key={index}
+                border
+                border-green-500/20
 
+                rounded-xl
 
-className="
+                p-5
+                md:p-6
 
-bg-white/5
+                transition-all
+                duration-300
 
+                hover:-translate-y-2
 
-backdrop-blur-xl
+                hover:border-green-400
 
+                hover:bg-green-500/5
 
+                hover:shadow-[0_0_30px_rgba(0,255,136,0.2)]
+              "
 
-border
+            >
 
-border-purple-500/30
 
+              {/* Certificate Image */}
 
+              <button
 
-rounded-2xl
+                type="button"
 
+                onClick={() => setSelectedImage(cert.image)}
 
+                className="
+                  block
 
-p-6
+                  w-full
 
-md:p-8
+                  cursor-zoom-in
 
+                  focus:outline-none
+                "
 
+              >
 
+                <div
 
-transition-all
+                  className="
+                    relative
 
+                    h-48
+                    md:h-56
 
-duration-700
+                    rounded-lg
 
+                    overflow-hidden
 
+                    bg-black
 
-hover:scale-105
+                    border
+                    border-green-500/20
 
+                    mb-6
+                  "
 
-hover:-translate-y-4
+                >
 
+                  <img
 
+                    src={cert.image}
 
-hover:bg-purple-500/10
+                    alt={cert.title}
 
+                    className="
+                      w-full
+                      h-full
 
+                      object-cover
 
-hover:border-purple-300
+                      transition-transform
+                      duration-500
 
+                      group-hover:scale-105
+                    "
 
+                  />
 
-hover:shadow-[0_0_50px_rgba(168,85,247,0.8)]
 
-"
+                  {/* Image Overlay */}
 
->
+                  <div
 
+                    className="
+                      absolute
+                      inset-0
 
+                      bg-black/0
 
+                      group-hover:bg-black/20
 
+                      transition
 
+                      flex
+                      items-center
+                      justify-center
+                    "
 
+                  >
 
-<div
+                    <span
 
-className="
+                      className="
+                        opacity-0
 
-h-40
+                        group-hover:opacity-100
 
-md:h-52
+                        transition
 
+                        bg-black/70
 
+                        border
+                        border-green-400/50
 
-rounded-xl
+                        text-green-400
 
+                        px-4
+                        py-2
 
+                        rounded-lg
 
-flex
+                        font-mono
 
-items-center
+                        text-sm
+                      "
 
-justify-center
+                    >
 
+                      [ CLICK TO VIEW ]
 
+                    </span>
 
-bg-purple-500/10
+                  </div>
 
+                </div>
 
+              </button>
 
-border
 
-border-purple-400/30
 
+              {/* Certificate Information */}
 
+              <div
 
-mb-6
+                className="
+                  font-mono
 
+                  text-xs
 
+                  text-gray-600
 
-text-6xl
+                  mb-3
+                "
 
-"
+              >
 
->
+                CERTIFICATE_{String(index + 1).padStart(2, "0")}
 
-🏆
+                <span className="text-green-500 ml-3">
+                  [VALID]
+                </span>
 
-</div>
+              </div>
 
 
 
+              <h3
 
+                className="
+                  text-xl
+                  md:text-2xl
 
+                  font-bold
 
+                  font-mono
 
-<h3
+                  text-green-400
 
-className="
+                  mb-4
+                "
 
-text-xl
+              >
 
-md:text-2xl
+                {cert.title}
 
+              </h3>
 
-font-bold
 
 
-text-purple-300
+              <p
 
+                className="
+                  text-gray-400
 
-mb-4
+                  leading-relaxed
 
-"
+                  mb-5
+                "
 
->
+              >
 
-{cert.title}
+                {cert.details}
 
-</h3>
+              </p>
 
 
 
+              <p
 
+                className="
+                  font-mono
 
+                  text-sm
 
+                  text-gray-500
+                "
 
-<p
+              >
 
-className="
+                Issued by:
 
-text-gray-300
+                <span className="text-green-400 ml-2">
+                  {cert.issuer}
+                </span>
 
+              </p>
 
-leading-relaxed
 
+            </div>
 
-mb-5
+          ))}
 
-"
+        </div>
 
->
 
-{cert.details}
 
-</p>
+        {/* Footer */}
 
+        <div
 
+          className="
+            mt-8
 
+            font-mono
 
+            text-sm
 
+            text-gray-500
+          "
 
+        >
 
-<p
+          <span className="text-green-400">
+            root@shahid:~$
+          </span>
 
-className="
+          {" "}
 
-text-purple-400
+          2 credentials verified.
 
+          <span className="text-green-400">
+            {" "}✓
+          </span>
 
-font-semibold
+        </div>
 
-"
 
->
+      </div>
 
-Issued by: {cert.issuer}
 
-</p>
 
+      {/* Full Image Modal */}
 
+      {selectedImage && (
 
+        <div
 
+          className="
+            fixed
 
-</div>
+            inset-0
 
+            z-[100]
 
-))
+            bg-black/90
 
-}
+            backdrop-blur-sm
 
+            flex
 
+            items-center
+            justify-center
 
-</div>
+            p-4
+          "
 
+          onClick={() => setSelectedImage(null)}
 
+        >
 
 
+          {/* Close Button */}
 
-</div>
+          <button
 
+            type="button"
 
-</section>
+            onClick={() => setSelectedImage(null)}
 
+            className="
+              absolute
 
-)
+              top-5
+              right-5
+
+              z-10
+
+              w-10
+              h-10
+
+              rounded-full
+
+              bg-black
+
+              border
+              border-green-500/50
+
+              text-green-400
+
+              text-xl
+
+              font-mono
+
+              hover:bg-green-500/10
+
+              hover:border-green-400
+
+              transition
+            "
+
+          >
+
+            ×
+
+          </button>
+
+
+
+          {/* Full Certificate */}
+
+          <img
+
+            src={selectedImage}
+
+            alt="Certificate preview"
+
+            onClick={(e) => e.stopPropagation()}
+
+            className="
+              max-w-full
+
+              max-h-[90vh]
+
+              object-contain
+
+              rounded-lg
+
+              border
+              border-green-500/40
+
+              shadow-[0_0_40px_rgba(0,255,136,0.15)]
+            "
+
+          />
+
+        </div>
+
+      )}
+
+    </section>
+
+  );
 
 }
 

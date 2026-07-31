@@ -7,56 +7,85 @@ import Experience from "./components/Experience";
 import Research from "./components/Research";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
-import SpaceBackground from "./components/SpaceBackground";
 
 
-function App(){
+function App() {
 
-return(
+  return (
 
-<div className="relative min-h-screen bg-[#080014]">
+    <div className="min-h-screen bg-[#050505] text-white">
 
-
-{/* Space Animation */}
-
-<div className="fixed inset-0 -z-0">
-
-<SpaceBackground />
-
-</div>
+      {/* Navigation */}
+      <Navbar />
 
 
+      {/* Main Website */}
+      <main>
 
-{/* Website Content */}
-
-<div className="relative z-10">
-
-
-<Navbar/>
-
-<Hero/>
-
-<About/>
-
-<Skills/>
-
-<Projects/>
-
-<Experience/>
-
-<Research/>
-
-<Certificates/>
-
-<Contact/>
+        {/* Hero Section */}
+        <Hero />
 
 
-</div>
+        {/* About Section */}
+        <About />
 
 
-</div>
+        {/* Skills Section */}
+        <Skills />
 
-)
+
+        {/* Projects Section */}
+        <Projects />
+
+
+        {/* Experience Section */}
+        <Experience />
+
+
+        {/* Research Section */}
+        <Research />
+
+
+        {/* Certificates Section */}
+        <Certificates />
+
+
+        {/* Contact Section */}
+        <Contact />
+
+      </main>
+
+
+      {/* Footer */}
+      <footer
+        className="
+          border-t
+          border-green-500/20
+          py-6
+          text-center
+          font-mono
+          text-sm
+          text-gray-500
+        "
+      >
+
+        <p>
+          root@shahid:~$ system_status
+        </p>
+
+        <p className="text-green-500 mt-2">
+          Portfolio system online ✓
+        </p>
+
+        <p className="mt-2">
+          © {new Date().getFullYear()} Md Shahidul Islam
+        </p>
+
+      </footer>
+
+    </div>
+
+  );
 
 }
 

@@ -1,373 +1,415 @@
-function Experience(){
+function Experience() {
 
-const experiences = [
+  const experiences = [
 
-{
-role:"Cybersecurity Intern",
-company:"Arena Web Security",
-period:"Internship",
+    {
+      role: "Cybersecurity Intern",
+      company: "Arena Web Security",
+      period: "Internship",
 
-description:
-"Worked on web application security, vulnerability assessment and penetration testing. Performed security testing using OWASP methodology and industry-standard tools including Burp Suite, Nmap, SQLMap, Nuclei and Acunetix."
-},
+      description:
+        "Worked on web application security, vulnerability assessment and penetration testing. Performed security testing using OWASP methodology and security tools including Burp Suite, Nmap, SQLMap, Nuclei and Acunetix."
+    },
 
 
-{
-role:"Data Analyst",
-company:"Inalyze Property Management",
-period:"Professional Experience",
+    {
+      role: "Data Analyst",
+      company: "Inalyze Property Management",
+      period: "Professional Experience",
 
-description:
-"Worked on data analysis, reporting and business data management to support operational decision making and improve business processes."
-},
+      description:
+        "Worked on data analysis, reporting and business data management to support operational decision making and improve business processes."
+    },
 
 
-{
-role:"Manager",
-company:"Abriana IT",
-period:"Professional Experience",
+    {
+      role: "Manager",
+      company: "Abriana IT",
+      period: "Professional Experience",
 
-description:
-"Managed operational tasks and technology-related activities while coordinating business operations."
-}
+      description:
+        "Managed operational tasks and technology-related activities while coordinating business operations."
+    }
 
-];
+  ];
 
 
+  return (
 
-return(
+    <section
 
-<section
+      id="experience"
 
-id="experience"
+      className="
+        text-white
 
-className="
+        px-6
+        md:px-8
 
-text-white
+        py-16
+        md:py-20
+      "
 
-px-6
+    >
 
-md:px-8
+      <div className="max-w-6xl mx-auto">
 
-py-16
 
-md:py-20
+        {/* Section Title */}
 
-"
+        <h2
 
->
+          className="
+            text-3xl
+            md:text-4xl
 
+            font-bold
+            font-mono
 
-<div className="max-w-6xl mx-auto">
+            text-green-400
 
+            mb-10
 
+            text-center
+            md:text-left
 
-<h2
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.6)]
+          "
 
-className="
+        >
 
-text-3xl
+          $ cat experience.log
 
-md:text-4xl
+        </h2>
 
 
-font-bold
 
+        {/* Terminal Status */}
 
-text-purple-400
+        <div
 
+          className="
+            bg-black/60
 
-mb-10
+            border
+            border-green-500/15
 
+            rounded-xl
 
+            p-5
 
-text-center
+            mb-10
 
-md:text-left
+            font-mono
 
+            text-sm
+          "
 
+        >
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+          <p className="text-gray-500">
 
+            <span className="text-green-400">
+              root@shahid:~$
+            </span>
 
-transition
+            {" "}
 
-"
+            ./load_experience.sh
 
->
+          </p>
 
-Experience
 
-</h2>
+          <p className="text-green-400 mt-2">
 
+            [OK] Experience records loaded
 
+          </p>
 
+        </div>
 
 
 
-<div
+        {/* Experience List */}
 
-className="
+        <div className="space-y-6">
 
-relative
 
+          {experiences.map((exp, index) => (
 
-border-l-2
+            <div
 
+              key={index}
 
-border-purple-500/50
+              className="
+                relative
 
+                bg-black/60
 
+                border
+                border-green-500/15
 
-ml-3
+                rounded-xl
 
+                p-6
+                md:p-8
 
-md:ml-5
+                font-mono
 
+                transition-all
+                duration-300
 
-pl-6
+                hover:-translate-y-2
 
-md:pl-10
+                hover:bg-green-500/5
 
+                hover:border-green-400/40
 
+                hover:shadow-[0_0_25px_rgba(0,255,136,0.1)]
+              "
 
-space-y-8
+            >
 
-"
 
->
+              {/* Top Row */}
 
+              <div
 
-{
+                className="
+                  flex
 
-experiences.map((exp,index)=>(
+                  flex-col
+                  sm:flex-row
 
+                  sm:items-center
 
-<div
+                  sm:justify-between
 
-key={index}
+                  gap-2
 
-className="
+                  mb-5
+                "
 
-relative
+              >
 
+                <div className="flex items-center gap-3">
 
+                  <span className="text-green-500">
 
-bg-white/5
+                    [{String(index + 1).padStart(2, "0")}]
 
+                  </span>
 
-backdrop-blur-xl
 
+                  <span className="text-gray-600">
 
+                    EXPERIENCE_RECORD
 
-border
+                  </span>
 
-border-purple-500/30
+                </div>
 
 
+                <span
 
-rounded-2xl
+                  className="
+                    text-xs
 
+                    text-green-500
 
+                    border
+                    border-green-500/20
 
-p-6
+                    rounded-md
 
-md:p-8
+                    px-3
+                    py-1
 
+                    w-fit
+                  "
 
+                >
 
+                  ACTIVE
 
-transition-all
+                </span>
 
+              </div>
 
-duration-700
 
 
+              {/* Role */}
 
+              <h3
 
-hover:scale-105
+                className="
+                  text-xl
+                  md:text-2xl
 
+                  font-bold
 
-hover:-translate-y-4
+                  text-green-400
 
+                  mb-3
+                "
 
+              >
 
-hover:bg-purple-500/10
+                {exp.role}
 
+              </h3>
 
 
-hover:border-purple-300
 
+              {/* Company */}
 
+              <h4
 
-hover:shadow-[0_0_50px_rgba(168,85,247,0.8)]
+                className="
+                  text-base
+                  md:text-lg
 
-"
+                  text-gray-300
 
->
+                  mb-2
+                "
 
+              >
 
+                {exp.company}
 
+              </h4>
 
-{/* Timeline Dot */}
 
-<div
 
-className="
+              {/* Period */}
 
-absolute
+              <p
 
+                className="
+                  text-sm
 
-w-5
+                  text-green-500/70
 
-h-5
+                  mb-5
+                "
 
+              >
 
+                {exp.period}
 
-rounded-full
+              </p>
 
 
 
-bg-purple-500
+              {/* Description */}
 
+              <p
 
+                className="
+                  text-gray-400
 
--left-[37px]
+                  text-sm
+                  md:text-base
 
+                  leading-relaxed
 
+                  max-w-4xl
+                "
 
-top-8
+              >
 
+                <span className="text-green-500">
+                  &gt;
+                </span>
 
+                {" "}
 
-shadow-[0_0_25px_rgba(168,85,247,1)]
+                {exp.description}
 
-"
+              </p>
 
->
 
-</div>
 
+              {/* Record Footer */}
 
+              <div
 
+                className="
+                  mt-6
 
+                  pt-4
 
+                  border-t
+                  border-green-500/10
 
+                  text-xs
 
-<h3
+                  text-gray-600
+                "
 
-className="
+              >
 
-text-xl
+                record_status:
 
-md:text-2xl
+                <span className="text-green-500 ml-2">
 
+                  verified
 
-font-bold
+                </span>
 
+              </div>
 
-text-purple-300
 
+            </div>
 
-mb-3
+          ))}
 
-"
 
->
+        </div>
 
-{exp.role}
 
-</h3>
 
+        {/* Footer */}
 
+        <div
 
+          className="
+            mt-8
 
+            font-mono
 
-<h4
+            text-sm
 
-className="
+            text-gray-600
+          "
 
-text-lg
+        >
 
+          <span className="text-green-400">
 
-text-gray-200
+            root@shahid:~$
 
+          </span>
 
-mb-2
+          {" "}
 
-"
+          experience_module loaded
 
->
+          <span className="text-green-400 ml-2">
 
-{exp.company}
+            ✓
 
-</h4>
+          </span>
 
+        </div>
 
 
+      </div>
 
+    </section>
 
-<p
-
-className="
-
-text-purple-400
-
-
-mb-4
-
-"
-
->
-
-{exp.period}
-
-</p>
-
-
-
-
-
-<p
-
-className="
-
-text-gray-300
-
-
-leading-relaxed
-
-"
-
->
-
-{exp.description}
-
-</p>
-
-
-
-</div>
-
-
-))
-
-}
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
+  );
 
 }
 

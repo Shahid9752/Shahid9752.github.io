@@ -1,278 +1,491 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope
+} from "react-icons/fa";
 
 
-function Contact(){
+function Contact() {
 
-return(
+  return (
 
-<section
-id="contact"
-className="
-text-white
-px-8
-py-20
-"
->
+    <section
 
+      id="contact"
 
-<div className="max-w-4xl mx-auto">
+      className="
+        text-white
 
+        px-6
+        md:px-8
 
+        py-16
+        md:py-20
+      "
 
-<h2
-className="
-text-4xl
-font-bold
+    >
 
-text-purple-400
+      <div className="max-w-4xl mx-auto">
 
-mb-10
 
-text-center
+        {/* Section Title */}
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+        <h2
 
-transition
-"
->
+          className="
+            text-3xl
+            md:text-4xl
 
-Contact Me
+            font-bold
+            font-mono
 
-</h2>
+            text-green-400
 
+            mb-10
 
+            text-center
 
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.7)]
+          "
 
-<div
+        >
 
-className="
+          $ ./contact.sh
 
-bg-white/5
+        </h2>
 
-backdrop-blur-xl
 
 
-border
+        {/* Terminal Window */}
 
-border-purple-500/30
+        <div
 
+          className="
+            bg-black/70
 
-rounded-3xl
+            border
+            border-green-500/30
 
+            rounded-xl
 
-p-10
+            overflow-hidden
 
+            shadow-[0_0_30px_rgba(0,255,136,0.08)]
+          "
 
-text-center
+        >
 
-shadow-[0_0_25px_rgba(168,85,247,0.2)]
 
-"
+          {/* Terminal Header */}
 
->
+          <div
 
+            className="
+              flex
+              items-center
+              gap-2
 
+              px-5
+              py-3
 
-<p
+              border-b
+              border-green-500/20
 
-className="
-text-gray-300
+              bg-black/80
+            "
 
-text-lg
+          >
 
-mb-10
+            <span className="w-3 h-3 rounded-full bg-red-500/70">
+            </span>
 
-"
+            <span className="w-3 h-3 rounded-full bg-yellow-500/70">
+            </span>
 
->
+            <span className="w-3 h-3 rounded-full bg-green-500/70">
+            </span>
 
-Interested in cybersecurity, research collaboration
-or professional opportunities? Feel free to connect with me.
 
-</p>
+            <span className="
+              ml-3
+              text-xs
+              font-mono
+              text-gray-500
+            ">
 
+              shahid@cybersecurity:~
 
+            </span>
 
+          </div>
 
 
-<div
 
-className="
-flex
+          {/* Terminal Content */}
 
-justify-center
+          <div
 
-gap-12
+            className="
+              p-6
+              md:p-10
 
-"
+              font-mono
+            "
 
->
+          >
 
 
+            {/* Command */}
 
+            <div className="text-sm mb-6">
 
+              <span className="text-green-400">
+                root@shahid:~$
+              </span>
 
-{/* Gmail */}
+              {" "}
 
-<a
+              ./connect.sh
 
-href="mailto:shahid9752.mi@gmail.com"
+            </div>
 
-className="
 
-text-red-400
 
+            {/* Message */}
 
-transition-all
+            <p
 
-duration-500
+              className="
+                text-gray-400
 
+                leading-relaxed
 
-hover:scale-150
+                mb-8
+              "
 
-hover:-translate-y-3
+            >
 
+              Interested in cybersecurity, research collaboration
+              or professional opportunities? Feel free to connect
+              with me.
 
-hover:drop-shadow-[0_0_35px_rgba(248,113,113,1)]
+            </p>
 
-"
 
->
 
+            {/* Status */}
 
-<FaEnvelope size={55}/>
+            <div
 
+              className="
+                text-sm
 
-</a>
+                text-gray-500
 
+                mb-8
 
+                space-y-2
+              "
 
+            >
 
+              <p>
 
+                <span className="text-green-400">
+                  [+]
+                </span>
 
+                {" "}
 
-{/* LinkedIn */}
+                Secure connection available
 
-<a
+              </p>
 
-href="https://www.linkedin.com/in/md-shahid-nur/"
 
-target="_blank"
+              <p>
 
-rel="noopener noreferrer"
+                <span className="text-green-400">
+                  [+]
+                </span>
 
+                {" "}
 
-className="
+                Communication channel ready
 
-text-blue-400
+              </p>
 
 
-transition-all
+              <p>
 
-duration-500
+                <span className="text-green-400">
+                  [+]
+                </span>
 
+                {" "}
 
-hover:scale-150
+                Awaiting connection...
 
-hover:-translate-y-3
+              </p>
 
+            </div>
 
-hover:drop-shadow-[0_0_35px_rgba(96,165,250,1)]
 
-"
 
->
+            {/* Social Links */}
 
+            <div
 
-<FaLinkedin size={55}/>
+              className="
+                grid
 
+                grid-cols-1
+                sm:grid-cols-3
 
-</a>
+                gap-4
+              "
 
+            >
 
 
+              {/* Email */}
 
+              <a
 
+                href="mailto:shahid9752.mi@gmail.com"
 
+                className="
+                  group
 
-{/* Github */}
+                  flex
+                  flex-col
 
-<a
+                  items-center
+                  justify-center
 
-href="https://github.com/Shahid9752"
+                  gap-3
 
-target="_blank"
+                  p-5
 
-rel="noopener noreferrer"
+                  rounded-lg
 
+                  bg-green-500/5
 
-className="
+                  border
+                  border-green-500/20
 
-text-gray-200
+                  text-green-400
 
+                  transition-all
+                  duration-300
 
-transition-all
+                  hover:bg-green-500/10
 
-duration-500
+                  hover:border-green-400
 
+                  hover:-translate-y-1
 
-hover:scale-150
+                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
+                "
 
-hover:-translate-y-3
+              >
 
+                <FaEnvelope
 
-hover:drop-shadow-[0_0_35px_rgba(255,255,255,1)]
+                  size={32}
 
-"
+                  className="
+                    group-hover:scale-110
 
->
+                    transition
+                  "
 
+                />
 
-<FaGithub size={55}/>
+                <span className="text-sm">
+                  Email
+                </span>
 
+              </a>
 
-</a>
 
 
+              {/* LinkedIn */}
 
+              <a
 
-</div>
+                href="https://www.linkedin.com/in/md-shahid-nur/"
 
+                target="_blank"
 
+                rel="noopener noreferrer"
 
+                className="
+                  group
 
+                  flex
+                  flex-col
 
+                  items-center
+                  justify-center
 
-<div
+                  gap-3
 
-className="
-mt-10
+                  p-5
 
-text-purple-300
+                  rounded-lg
 
-font-semibold
+                  bg-green-500/5
 
-"
+                  border
+                  border-green-500/20
 
->
+                  text-green-400
 
-shahid9752.mi@gmail.com
+                  transition-all
+                  duration-300
 
-</div>
+                  hover:bg-green-500/10
 
+                  hover:border-green-400
 
+                  hover:-translate-y-1
 
-</div>
+                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
+                "
 
+              >
 
+                <FaLinkedin
 
-</div>
+                  size={32}
 
+                  className="
+                    group-hover:scale-110
 
-</section>
+                    transition
+                  "
 
+                />
 
-)
+                <span className="text-sm">
+                  LinkedIn
+                </span>
+
+              </a>
+
+
+
+              {/* GitHub */}
+
+              <a
+
+                href="https://github.com/Shahid9752"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+                className="
+                  group
+
+                  flex
+                  flex-col
+
+                  items-center
+                  justify-center
+
+                  gap-3
+
+                  p-5
+
+                  rounded-lg
+
+                  bg-green-500/5
+
+                  border
+                  border-green-500/20
+
+                  text-green-400
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-green-500/10
+
+                  hover:border-green-400
+
+                  hover:-translate-y-1
+
+                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
+                "
+
+              >
+
+                <FaGithub
+
+                  size={32}
+
+                  className="
+                    group-hover:scale-110
+
+                    transition
+                  "
+
+                />
+
+                <span className="text-sm">
+                  GitHub
+                </span>
+
+              </a>
+
+
+            </div>
+
+
+
+            {/* Email Address */}
+
+            <div
+
+              className="
+                mt-8
+
+                pt-6
+
+                border-t
+                border-green-500/10
+
+                text-center
+
+                text-sm
+
+                text-gray-500
+              "
+
+            >
+
+              <span className="text-green-400">
+                contact:
+              </span>
+
+              {" "}
+
+              shahid9752.mi@gmail.com
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  );
 
 }
 

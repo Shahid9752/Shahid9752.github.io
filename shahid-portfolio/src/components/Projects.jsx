@@ -1,404 +1,447 @@
-function Projects(){
+function Projects() {
 
-const projects = [
+  const projects = [
 
-{
-title:"Cyber Threat Detection Using Machine Learning",
-description:
-"Machine learning based cyber threat detection system focused on malware detection and security analysis with explainable AI insights.",
-tech:[
-"Machine Learning",
-"Cybersecurity",
-"Explainable AI",
-"Malware Detection"
-]
-},
+    {
+      title: "Cyber Threat Detection Using Machine Learning",
 
+      description:
+        "Machine learning based cyber threat detection system focused on malware detection and security analysis with explainable AI insights.",
 
-{
-title:"Flutter Ecommerce App",
-description:
-"Developed a mobile ecommerce application with modern user interface, product management and shopping features.",
-tech:[
-"Flutter",
-"Dart",
-"Firebase"
-]
-},
+      tech: [
+        "Machine Learning",
+        "Cybersecurity",
+        "Explainable AI",
+        "Malware Detection"
+      ]
+    },
 
 
-{
-title:"Stylista Ecommerce Website",
-description:
-"Designed and developed a responsive ecommerce website with modern UI design and product management functionality.",
-tech:[
-"HTML",
-"CSS",
-"JavaScript"
-]
-},
+    {
+      title: "Flutter Ecommerce App",
 
+      description:
+        "Developed a mobile ecommerce application with modern user interface, product management and shopping features.",
 
-{
-title:"Weather Application",
-description:
-"A weather application providing real-time weather information using API integration.",
-tech:[
-"API",
-"JavaScript",
-"Frontend"
-]
-},
+      tech: [
+        "Flutter",
+        "Dart",
+        "Firebase"
+      ]
+    },
 
 
-{
-title:"Library Management System",
-description:
-"A software system for managing books, users and library operations efficiently.",
-tech:[
-"C++",
-"Database",
-"Software Development"
-]
-}
+    {
+      title: "Stylista Ecommerce Website",
 
-];
+      description:
+        "Designed and developed a responsive ecommerce website with modern UI design and product management functionality.",
 
+      tech: [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
 
 
-return(
+    {
+      title: "Weather Application",
 
-<section
+      description:
+        "A weather application providing real-time weather information using API integration.",
 
-id="projects"
+      tech: [
+        "API",
+        "JavaScript",
+        "Frontend"
+      ]
+    },
 
-className="
 
-text-white
+    {
+      title: "Library Management System",
 
-px-6
+      description:
+        "A software system for managing books, users and library operations efficiently.",
 
-md:px-8
+      tech: [
+        "C++",
+        "Database",
+        "Software Development"
+      ]
+    }
 
-py-16
+  ];
 
-md:py-20
 
-"
+  return (
 
->
+    <section
 
+      id="projects"
 
-<div className="max-w-6xl mx-auto">
+      className="
+        text-white
 
+        px-6
+        md:px-8
 
+        py-16
+        md:py-20
+      "
 
-<h2
+    >
 
-className="
+      <div className="max-w-6xl mx-auto">
 
-text-3xl
 
-md:text-4xl
+        {/* Title */}
 
+        <h2
 
-font-bold
+          className="
+            text-3xl
+            md:text-4xl
 
+            font-bold
+            font-mono
 
-text-purple-400
+            text-green-400
 
+            mb-10
 
+            text-center
+            md:text-left
 
-mb-8
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.7)]
+          "
 
-md:mb-10
+        >
 
+          $ ls -la /projects
 
+        </h2>
 
-text-center
 
-md:text-left
 
+        {/* Terminal */}
 
+        <div
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+          className="
+            bg-black/60
 
-transition
+            border
+            border-green-500/20
 
-"
+            rounded-xl
 
->
+            p-5
 
-Projects
+            mb-8
 
-</h2>
+            font-mono
 
+            text-sm
+          "
 
+        >
 
+          <p className="text-gray-500">
 
+            <span className="text-green-400">
+              root@shahid:~$
+            </span>
 
+            {" "}
 
-<div
+            access_project_repository
 
-className="
+          </p>
 
-grid
 
+          <p className="text-green-400 mt-2">
 
-grid-cols-1
+            [OK] Project repository unlocked
 
+          </p>
 
-md:grid-cols-2
+        </div>
 
 
 
-gap-8
+        {/* Project Grid */}
 
-md:gap-10
+        <div
 
-"
+          className="
+            grid
 
->
+            grid-cols-1
+            md:grid-cols-2
 
+            gap-6
+            md:gap-8
+          "
 
+        >
 
-{
+          {projects.map((project, index) => (
 
-projects.map((project,index)=>(
+            <article
 
+              key={index}
 
-<div
+              className="
+                group
 
-key={index}
+                bg-black/60
 
+                border
+                border-green-500/15
 
-className="
+                rounded-xl
 
+                p-6
+                md:p-7
 
-bg-white/5
+                transition-all
+                duration-300
 
+                hover:-translate-y-2
 
-backdrop-blur-xl
+                hover:bg-green-500/5
 
+                hover:border-green-400/50
 
+                hover:shadow-[0_0_25px_rgba(0,255,136,0.12)]
+              "
 
-border
+            >
 
-border-purple-500/30
+              {/* Project ID */}
 
+              <div
 
+                className="
+                  flex
 
-rounded-2xl
+                  justify-between
 
+                  items-center
 
+                  mb-5
 
-p-6
+                  font-mono
 
-md:p-8
+                  text-xs
+                "
 
+              >
 
+                <span className="text-gray-600">
 
-transition-all
+                  PROJECT_{String(index + 1).padStart(2, "0")}
 
+                </span>
 
-duration-700
 
+                <span className="text-green-500">
 
+                  [ACTIVE]
 
-hover:scale-105
+                </span>
 
+              </div>
 
-hover:-translate-y-4
 
 
+              {/* Title */}
 
-hover:bg-purple-500/10
+              <h3
 
+                className="
+                  text-xl
+                  md:text-2xl
 
+                  font-bold
 
-hover:border-purple-300
+                  font-mono
 
+                  text-green-400
 
+                  mb-4
 
-hover:shadow-[0_0_50px_rgba(168,85,247,0.8)]
+                  group-hover:text-green-300
 
+                  transition
+                "
 
+              >
 
-cursor-pointer
+                {project.title}
 
-"
+              </h3>
 
->
 
 
+              {/* Description */}
 
-<h3
+              <p
 
-className="
+                className="
+                  text-gray-400
 
-text-xl
+                  leading-relaxed
 
-md:text-2xl
+                  mb-6
+                "
 
+              >
 
-font-bold
+                {project.description}
 
+              </p>
 
 
-text-purple-300
 
+              {/* Technologies */}
 
+              <div
 
-mb-4
+                className="
+                  flex
 
-"
+                  flex-wrap
 
->
+                  gap-2
+                "
 
-{project.title}
+              >
 
-</h3>
+                {project.tech.map((item, i) => (
 
+                  <span
 
+                    key={i}
 
+                    className="
+                      px-3
+                      py-1.5
 
+                      rounded-md
 
-<p
+                      bg-green-500/5
 
-className="
+                      border
+                      border-green-500/15
 
-text-gray-300
+                      text-green-400
 
+                      text-xs
 
+                      font-mono
 
-leading-relaxed
+                      transition
 
+                      hover:border-green-400/50
 
+                      hover:bg-green-500/10
+                    "
 
-mb-6
+                  >
 
-"
+                    {item}
 
->
+                  </span>
 
-{project.description}
+                ))}
 
-</p>
+              </div>
 
 
 
+              {/* Command */}
 
+              <div
 
+                className="
+                  mt-6
 
+                  pt-4
 
-<div
+                  border-t
+                  border-green-500/10
 
-className="
+                  font-mono
 
-flex
+                  text-xs
 
-flex-wrap
+                  text-gray-600
+                "
 
+              >
 
-gap-3
+                <span className="text-green-500">
+                  $
+                </span>
 
-"
+                {" "}
 
->
+                project --status
 
+                <span className="text-green-400 ml-2">
+                  OK
+                </span>
 
-{
+              </div>
 
-project.tech.map((item,i)=>(
 
+            </article>
 
-<span
+          ))}
 
-key={i}
+        </div>
 
-className="
 
-px-3
 
-py-2
+        {/* Footer */}
 
+        <div
 
-rounded-full
+          className="
+            mt-8
 
+            font-mono
 
+            text-sm
 
-bg-purple-500/20
+            text-gray-500
+          "
 
+        >
 
+          <span className="text-green-400">
+            root@shahid:~$
+          </span>
 
-border
+          {" "}
 
-border-purple-400/30
+          {projects.length} projects loaded.
 
+          <span className="text-green-400 ml-2">
+            ✓
+          </span>
 
+        </div>
 
-text-sm
 
+      </div>
 
+    </section>
 
-transition-all
-
-
-
-duration-500
-
-
-
-hover:scale-110
-
-
-
-hover:bg-purple-500/40
-
-"
-
->
-
-{item}
-
-</span>
-
-
-))
-
-
-}
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-))
-
-
-}
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
+  );
 
 }
 

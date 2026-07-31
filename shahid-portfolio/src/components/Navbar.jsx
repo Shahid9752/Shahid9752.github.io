@@ -1,314 +1,285 @@
 import { useState } from "react";
 
 
-function Navbar(){
+function Navbar() {
 
-const [open,setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
 
+  const menuItems = [
+    "About",
+    "Skills",
+    "Projects",
+    "Experience",
+    "Research",
+    "Certificates",
+    "Contact"
+  ];
 
-const menuItems = [
-"About",
-"Skills",
-"Projects",
-"Experience",
-"Research",
-"Certificates",
-"Contact"
-];
 
+  return (
 
+    <nav
 
-return(
+      className="
+        fixed
 
-<nav
+        top-0
+        left-0
 
-className="
-fixed
-top-0
-left-0
+        w-full
 
-w-full
+        z-50
 
-z-50
+        bg-[#030604]/90
 
-bg-black/50
+        backdrop-blur-md
 
-backdrop-blur-xl
+        border-b
 
-border-b
+        border-green-500/20
+      "
 
-border-purple-500/30
+    >
 
-"
+      <div
 
->
+        className="
+          max-w-6xl
 
+          mx-auto
 
-<div
+          px-6
+          md:px-8
 
-className="
-max-w-6xl
+          py-4
 
-mx-auto
+          flex
 
-px-8
+          justify-between
 
-py-5
+          items-center
+        "
 
+      >
 
-flex
 
-justify-between
+        {/* Logo */}
 
-items-center
+        <a
 
-"
+          href="#home"
 
->
+          className="
+            font-mono
 
+            text-lg
+            md:text-xl
 
-{/* Logo */}
+            font-bold
 
-<a
+            text-green-400
 
-href="#home"
+            hover:text-green-300
 
-className="
-text-3xl
+            transition
 
-font-bold
+            whitespace-nowrap
+          "
 
-text-purple-400
+        >
 
+          <span className="text-gray-500">
+            &lt;
+          </span>
 
-hover:text-purple-200
+          Shahid
 
+          <span className="text-gray-500">
+            /&gt;
+          </span>
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+        </a>
 
 
-transition
 
-"
+        {/* Desktop Menu */}
 
->
+        <div
 
-Md Shahidul Islam
+          className="
+            hidden
 
-</a>
+            md:flex
 
+            items-center
 
+            gap-6
 
+            font-mono
 
+            text-sm
+          "
 
+        >
 
-{/* Desktop Menu */}
+          {menuItems.map((item) => (
 
-<div
+            <a
 
-className="
-hidden
+              key={item}
 
-md:flex
+              href={`#${item.toLowerCase()}`}
 
-gap-8
+              className="
+                text-gray-400
 
-text-gray-300
+                transition-all
+                duration-300
 
-"
+                hover:text-green-400
 
->
+                hover:-translate-y-0.5
+              "
 
+            >
 
-{
+              <span className="text-green-600">
+                ./ 
+              </span>
 
-menuItems.map((item)=>(
+              {item}
 
+            </a>
 
-<a
+          ))}
 
-key={item}
+        </div>
 
-href={`#${item.toLowerCase()}`}
 
-className="
 
-transition-all
+        {/* Mobile Button */}
 
-duration-500
+        <button
 
+          type="button"
 
-hover:text-purple-300
+          onClick={() => setOpen(!open)}
 
+          className="
+            md:hidden
 
-hover:scale-125
+            text-green-400
 
+            text-2xl
 
-hover:-translate-y-1
+            font-mono
 
+            hover:text-green-300
 
-hover:drop-shadow-[0_0_15px_rgba(168,85,247,1)]
+            transition
+          "
 
-"
+          aria-label="Toggle navigation"
 
->
+        >
 
-{item}
+          {open ? "×" : "☰"}
 
-</a>
+        </button>
 
 
-))
+      </div>
 
 
-}
 
+      {/* Mobile Menu */}
 
-</div>
+      {open && (
 
+        <div
 
+          className="
+            md:hidden
 
+            bg-[#030604]/95
 
+            backdrop-blur-md
 
+            border-t
 
+            border-green-500/10
 
-{/* Mobile Button */}
+            px-6
 
-<button
+            py-5
+          "
 
-onClick={()=>setOpen(!open)}
+        >
 
-className="
+          <div
 
-md:hidden
+            className="
+              flex
 
+              flex-col
 
-text-purple-400
+              gap-4
 
+              font-mono
 
-text-3xl
+              text-sm
+            "
 
-"
+          >
 
->
+            {menuItems.map((item) => (
 
-☰
+              <a
 
-</button>
+                key={item}
 
+                href={`#${item.toLowerCase()}`}
 
+                onClick={() => setOpen(false)}
 
-</div>
+                className="
+                  text-gray-400
 
+                  py-2
 
+                  border-b
 
+                  border-green-500/10
 
+                  transition
 
+                  hover:text-green-400
+                "
 
+              >
 
-{/* Mobile Menu */}
+                <span className="text-green-500">
+                  $ cd
+                </span>
 
+                {" "}
 
-{
+                {item}
 
-open &&
+              </a>
 
-<div
+            ))}
 
-className="
+          </div>
 
-md:hidden
+        </div>
 
-bg-black/80
+      )}
 
-backdrop-blur-xl
+    </nav>
 
-
-border-t
-
-border-purple-500/30
-
-
-px-8
-
-py-6
-
-"
-
->
-
-
-<div
-
-className="
-flex
-
-flex-col
-
-gap-6
-
-"
-
->
-
-
-{
-
-menuItems.map((item)=>(
-
-
-<a
-
-key={item}
-
-href={`#${item.toLowerCase()}`}
-
-onClick={()=>setOpen(false)}
-
-className="
-
-text-gray-300
-
-
-transition-all
-
-duration-500
-
-
-hover:text-purple-300
-
-
-hover:scale-110
-
-
-"
-
->
-
-{item}
-
-</a>
-
-
-))
-
-}
-
-
-</div>
-
-
-</div>
-
-
-}
-
-
-</nav>
-
-
-)
+  );
 
 }
 

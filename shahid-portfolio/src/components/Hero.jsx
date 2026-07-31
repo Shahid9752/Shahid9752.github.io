@@ -1,521 +1,605 @@
-function Hero(){
+import { useEffect, useState } from "react";
 
-return(
 
-<section
-id="home"
-className="
-min-h-screen
+function Hero() {
 
-flex
-items-center
+  const fullText =
+    "Cybersecurity & Penetration Tester";
 
-px-6
-md:px-8
 
-pt-28
-pb-16
+  const [text, setText] = useState("");
 
-text-white
+  const [index, setIndex] = useState(0);
 
-overflow-hidden
 
-"
->
+  useEffect(() => {
 
+    if (index < fullText.length) {
 
-<div
+      const timer = setTimeout(() => {
 
-className="
-max-w-6xl
+        setText(fullText.slice(0, index + 1));
 
-mx-auto
+        setIndex(index + 1);
 
+      }, 70);
 
-grid
 
-md:grid-cols-2
+      return () => clearTimeout(timer);
 
+    }
 
-gap-10
+  }, [index]);
 
 
-items-center
+  return (
 
-"
+    <section
 
->
+      id="home"
 
+      className="
+        min-h-screen
 
+        flex
+        items-center
 
+        px-6
+        md:px-8
 
-{/* LEFT CONTENT */}
+        pt-28
+        pb-16
 
-<div
+        text-white
+      "
 
-className="
-text-center
+    >
 
-md:text-left
+      <div
 
-"
+        className="
+          max-w-6xl
 
->
+          mx-auto
 
+          w-full
 
-<p
+          grid
 
-className="
-text-purple-400
+          md:grid-cols-2
 
-text-lg
+          gap-12
 
-md:text-xl
+          items-center
+        "
 
-mb-4
+      >
 
-hover:drop-shadow-[0_0_15px_rgba(168,85,247,1)]
 
-transition
+        {/* =========================
+            LEFT - TERMINAL
+        ========================== */}
 
-"
+        <div
 
->
+          className="
+            order-2
+            md:order-1
 
-Hello, I'm
+            font-mono
+          "
 
-</p>
+        >
 
 
+          {/* Terminal Window */}
 
+          <div
 
+            className="
+              bg-black/70
 
+              border
+              border-green-500/20
 
-<h1
+              rounded-xl
 
-className="
+              overflow-hidden
 
-text-4xl
+              shadow-[0_0_30px_rgba(0,255,136,0.06)]
+            "
 
-sm:text-5xl
+          >
 
-md:text-6xl
 
+            {/* Terminal Header */}
 
-font-bold
+            <div
 
+              className="
+                flex
 
-mb-5
+                items-center
 
+                gap-2
 
-hover:text-purple-200
+                px-4
+                py-3
 
+                bg-black/80
 
-transition
+                border-b
+                border-green-500/10
+              "
 
+            >
 
-hover:drop-shadow-[0_0_25px_rgba(168,85,247,1)]
+              <span className="w-3 h-3 rounded-full bg-red-500/60">
+              </span>
 
-"
+              <span className="w-3 h-3 rounded-full bg-yellow-500/60">
+              </span>
 
->
+              <span className="w-3 h-3 rounded-full bg-green-500/60">
+              </span>
 
-Md Shahidul Islam
 
-</h1>
+              <span
 
+                className="
+                  ml-3
 
+                  text-xs
 
+                  text-gray-600
+                "
 
+              >
 
+                shahid@cybersecurity:~
 
+              </span>
 
-<h2
+            </div>
 
-className="
 
-text-xl
 
-sm:text-2xl
+            {/* Terminal Body */}
 
-md:text-3xl
+            <div
 
+              className="
+                p-6
+                md:p-8
+              "
 
-font-semibold
+            >
 
 
-text-purple-300
+              {/* Command */}
 
+              <div
 
-mb-6
+                className="
+                  text-sm
 
-"
+                  text-gray-500
 
->
+                  mb-6
+                "
 
-Cybersecurity & Penetration Tester
+              >
 
-</h2>
+                <span className="text-green-400">
+                  root@shahid:~$
+                </span>
 
+                {" "}
 
+                whoami
 
+              </div>
 
 
 
+              {/* Name */}
 
-<p
+              <h1
 
-className="
+                className="
+                  text-3xl
+                  sm:text-4xl
+                  md:text-5xl
 
-text-gray-300
+                  font-bold
 
+                  text-green-400
 
-text-base
+                  mb-5
 
-md:text-lg
+                  leading-tight
+                "
 
+              >
 
-leading-relaxed
+                Md Shahidul Islam
 
+              </h1>
 
-mb-8
 
-"
 
->
+              {/* Typing Animation */}
 
-Passionate about cybersecurity, web application security,
-penetration testing, vulnerability assessment and machine
-learning based cyber threat detection. Experienced with
-OWASP methodology and security tools including Burp Suite,
-Nmap, SQLMap, Nuclei and Acunetix.
+              <div
 
-</p>
+                className="
+                  min-h-[32px]
 
+                  text-lg
+                  md:text-xl
 
+                  text-green-300
 
+                  mb-6
+                "
 
+              >
 
+                <span className="text-gray-500">
+                  &gt;{" "}
+                </span>
 
+                {text}
 
-<div
+                <span
 
-className="
+                  className="
+                    inline-block
 
-flex
+                    w-[2px]
 
-flex-col
+                    h-5
 
-sm:flex-row
+                    ml-1
 
+                    bg-green-400
 
-gap-5
+                    animate-pulse
 
+                    align-middle
+                  "
 
-justify-center
+                >
+                </span>
 
-md:justify-start
+              </div>
 
-"
 
->
 
+              {/* Status */}
 
+              <div
 
+                className="
+                  text-sm
 
+                  text-gray-500
 
-<a
+                  space-y-2
 
-href="/CV.pdf"
+                  mb-7
+                "
 
-download
+              >
 
+                <p>
 
-className="
+                  <span className="text-green-400">
+                    [+]
+                  </span>
 
-px-7
+                  {" "}
 
-py-3
+                  Web Application Security
 
+                </p>
 
-rounded-xl
 
+                <p>
 
-bg-purple-600
+                  <span className="text-green-400">
+                    [+]
+                  </span>
 
+                  {" "}
 
-font-semibold
+                  Penetration Testing
 
+                </p>
 
 
-text-center
+                <p>
 
+                  <span className="text-green-400">
+                    [+]
+                  </span>
 
-transition-all
+                  {" "}
 
+                  Cyber Threat Detection
 
-duration-500
+                </p>
 
+              </div>
 
 
-hover:scale-110
 
+              {/* Description */}
 
-hover:-translate-y-2
+              <p
 
+                className="
+                  text-gray-400
 
+                  leading-relaxed
 
-hover:bg-purple-500
+                  mb-8
 
+                  text-sm
+                  md:text-base
+                "
 
+              >
 
-hover:shadow-[0_0_35px_rgba(168,85,247,0.9)]
+                Passionate about cybersecurity, web application
+                security, vulnerability assessment, penetration
+                testing and machine learning-based cyber threat
+                detection.
 
-"
+              </p>
 
->
 
-Download CV
 
-</a>
+              {/* Buttons */}
 
+              <div
 
+                className="
+                  flex
 
+                  flex-col
+                  sm:flex-row
 
+                  gap-4
+                "
 
+              >
 
 
-<a
+                {/* CV */}
 
-href="#contact"
+                <a
 
+                  href="/CV.pdf"
 
-className="
+                  download
 
-px-7
+                  className="
+                    px-6
+                    py-3
 
-py-3
+                    rounded-lg
 
+                    bg-green-500/10
 
-rounded-xl
+                    border
+                    border-green-500/30
 
+                    text-green-400
 
-border
+                    text-center
 
-border-purple-500
+                    font-mono
+                    font-semibold
 
+                    transition-all
+                    duration-300
 
-font-semibold
+                    hover:bg-green-500/15
 
+                    hover:border-green-400
 
+                    hover:-translate-y-1
 
-text-center
+                    hover:shadow-[0_0_20px_rgba(0,255,136,0.15)]
+                  "
 
+                >
 
-transition-all
+                  ./download_cv.sh
 
+                </a>
 
-duration-500
 
 
+                {/* Contact */}
 
-hover:scale-110
+                <a
 
+                  href="#contact"
 
-hover:-translate-y-2
+                  className="
+                    px-6
+                    py-3
 
+                    rounded-lg
 
+                    border
+                    border-gray-700
 
-hover:bg-purple-500/20
+                    text-gray-400
 
+                    text-center
 
+                    font-mono
+                    font-semibold
 
-hover:shadow-[0_0_35px_rgba(168,85,247,0.8)]
+                    transition-all
+                    duration-300
 
-"
+                    hover:text-green-400
 
->
+                    hover:border-green-500/40
 
-Contact Me
+                    hover:-translate-y-1
+                  "
 
-</a>
+                >
 
+                  ./contact.sh
 
+                </a>
 
 
+              </div>
 
-</div>
 
 
+              {/* Terminal Prompt */}
 
-</div>
+              <div
 
+                className="
+                  mt-8
 
+                  text-xs
 
+                  text-gray-600
+                "
 
+              >
 
+                <span className="text-green-500">
+                  root@shahid:~$
+                </span>
 
+                {" "}
 
+                system_ready
 
+                <span className="text-green-400 ml-2">
+                  ✓
+                </span>
 
-{/* IMAGE */}
+              </div>
 
 
-<div
+            </div>
 
-className="
+          </div>
 
-flex
+        </div>
 
-justify-center
 
 
-order-first
+        {/* =========================
+            RIGHT - PROFILE
+        ========================== */}
 
-md:order-last
+        <div
 
-"
+          className="
+            order-1
+            md:order-2
 
->
+            flex
 
+            justify-center
 
+            items-center
+          "
 
-<div
+        >
 
-className="
+          <div className="relative">
 
-relative
 
+            {/* Subtle Green Ring */}
 
-transition-all
+            <div
 
-duration-700
+              className="
+                absolute
 
+                -inset-3
 
+                rounded-full
 
-hover:scale-110
+                border
 
+                border-green-500/20
 
-hover:-translate-y-5
+                animate-pulse
+              "
 
-"
+            >
+            </div>
 
->
 
 
+            {/* Image */}
 
-<div
+            <img
 
-className="
+              src="/profile.jpg"
 
-absolute
+              alt="Md Shahidul Islam"
 
-inset-0
+              className="
+                relative
 
+                w-52
+                h-52
 
-rounded-full
+                sm:w-64
+                sm:h-64
 
+                md:w-72
+                md:h-72
 
-bg-purple-600
+                object-cover
 
+                rounded-full
 
-blur-3xl
+                border-2
 
+                border-green-500/40
 
-opacity-40
+                shadow-[0_0_30px_rgba(0,255,136,0.12)]
 
+                transition-all
 
-animate-pulse
+                duration-500
 
-"
+                hover:border-green-400/70
 
->
+                hover:scale-105
 
-</div>
+                hover:shadow-[0_0_40px_rgba(0,255,136,0.2)]
+              "
 
+            />
 
+          </div>
 
+        </div>
 
 
+      </div>
 
-<img
+    </section>
 
-src="/profile.jpg"
-
-alt="Md Shahidul Islam"
-
-
-className="
-
-relative
-
-
-w-52
-
-h-52
-
-
-sm:w-64
-
-sm:h-64
-
-
-md:w-72
-
-md:h-72
-
-
-
-object-cover
-
-
-rounded-full
-
-
-border-4
-
-
-border-purple-500
-
-
-
-shadow-[0_0_50px_rgba(168,85,247,0.8)]
-
-
-
-transition-all
-
-
-duration-700
-
-
-
-hover:border-purple-300
-
-"
-
-/>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
+  );
 
 }
 

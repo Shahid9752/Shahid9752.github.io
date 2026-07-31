@@ -1,244 +1,290 @@
-function Skills(){
+function Skills() {
 
-const skills = [
+  const skills = [
 
-"Web Application Security",
-"Penetration Testing",
-"OWASP Top 10",
-"Burp Suite",
-"Nmap",
-"SQLMap",
-"Nuclei",
-"Acunetix",
-"Linux",
-"OSINT",
-"Vulnerability Assessment",
-"Network Security"
+    "Web Application Security",
+    "Penetration Testing",
+    "OWASP Top 10",
+    "Burp Suite",
+    "Nmap",
+    "SQLMap",
+    "Nuclei",
+    "Acunetix",
+    "Linux",
+    "OSINT",
+    "Vulnerability Assessment",
+    "Network Security"
 
-];
+  ];
 
 
-return(
+  return (
 
-<section
+    <section
 
-id="skills"
+      id="skills"
 
-className="
+      className="
+        text-white
 
-text-white
+        px-6
+        md:px-8
 
-px-6
+        py-16
+        md:py-20
+      "
 
-md:px-8
+    >
 
-py-16
+      <div className="max-w-6xl mx-auto">
 
-md:py-20
 
-"
+        {/* Section Title */}
 
->
+        <h2
 
+          className="
+            text-3xl
+            md:text-4xl
 
-<div className="max-w-6xl mx-auto">
+            font-bold
+            font-mono
 
+            text-green-400
 
+            mb-10
 
-<h2
+            text-center
+            md:text-left
 
-className="
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.7)]
+          "
 
-text-3xl
+        >
 
-md:text-4xl
+          $ ./security_tools --list
 
+        </h2>
 
-font-bold
 
 
-text-purple-400
+        {/* Terminal Status */}
 
+        <div
 
-mb-8
+          className="
+            bg-black/60
 
-md:mb-10
+            border
+            border-green-500/20
 
+            rounded-xl
 
+            p-5
 
-text-center
+            mb-8
 
-md:text-left
+            font-mono
 
+            text-sm
+          "
 
+        >
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+          <p className="text-gray-500">
 
+            <span className="text-green-400">
+              root@shahid:~$
+            </span>
 
-transition
+            {" "}
 
-"
+            scanning_security_stack...
 
->
+          </p>
 
-Technical Skills
 
-</h2>
+          <p className="text-green-400 mt-2">
 
+            [OK] 12 security capabilities detected
 
+          </p>
 
+        </div>
 
 
 
+        {/* Skills Grid */}
 
-<div
+        <div
 
-className="
+          className="
+            grid
 
-grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
 
+            gap-4
+            md:gap-5
+          "
 
-grid-cols-1
+        >
 
+          {skills.map((skill, index) => (
 
-sm:grid-cols-2
+            <div
 
+              key={index}
 
-lg:grid-cols-4
+              className="
+                group
 
+                bg-black/60
 
-gap-6
+                border
+                border-green-500/15
 
+                rounded-lg
 
-md:gap-8
+                p-5
 
-"
+                font-mono
 
->
+                transition-all
+                duration-300
 
+                hover:-translate-y-1
 
-{
+                hover:bg-green-500/5
 
-skills.map((skill,index)=>(
+                hover:border-green-400/50
 
+                hover:shadow-[0_0_20px_rgba(0,255,136,0.12)]
 
-<div
+                cursor-default
+              "
 
+            >
 
-key={index}
+              {/* Number */}
 
+              <div
 
+                className="
+                  text-xs
 
-className="
+                  text-gray-600
 
+                  mb-4
+                "
 
-bg-white/5
+              >
 
+                SKILL_{String(index + 1).padStart(2, "0")}
 
-backdrop-blur-xl
+              </div>
 
 
 
-border
+              {/* Skill */}
 
-border-purple-500/30
+              <div
 
+                className="
+                  text-green-400
 
+                  font-semibold
 
-rounded-2xl
+                  text-sm
+                  md:text-base
 
+                  group-hover:text-green-300
 
+                  transition
+                "
 
-p-5
+              >
 
-md:p-6
+                <span className="text-green-600">
+                  $
+                </span>
 
+                {" "}
 
+                {skill}
 
-text-center
+              </div>
 
 
 
-text-gray-200
+              {/* Status */}
 
+              <div
 
+                className="
+                  mt-4
 
-font-semibold
+                  text-xs
 
+                  text-gray-600
+                "
 
+              >
 
-transition-all
+                status:
 
+                <span className="text-green-500 ml-1">
+                  available
+                </span>
 
-duration-700
+              </div>
 
+            </div>
 
-ease-out
+          ))}
 
+        </div>
 
 
 
-hover:scale-110
+        {/* Footer */}
 
+        <div
 
-hover:-translate-y-4
+          className="
+            mt-8
 
+            font-mono
 
+            text-sm
 
+            text-gray-500
+          "
 
-hover:bg-purple-500/10
+        >
 
+          <span className="text-green-400">
+            root@shahid:~$
+          </span>
 
+          {" "}
 
+          security stack initialized.
 
-hover:text-purple-200
+          <span className="text-green-400">
+            {" "}✓
+          </span>
 
+        </div>
 
 
+      </div>
 
-hover:border-purple-300
+    </section>
 
-
-
-
-hover:shadow-[0_0_40px_rgba(168,85,247,0.8)]
-
-
-
-cursor-pointer
-
-
-"
-
->
-
-
-{skill}
-
-
-
-</div>
-
-
-))
-
-
-}
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
+  );
 
 }
 

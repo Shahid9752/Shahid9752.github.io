@@ -1,432 +1,504 @@
-function About(){
+function About() {
 
-return(
+  return (
 
-<section
-id="about"
-className="
-text-white
-px-6
-md:px-8
-py-16
-md:py-20
-"
->
+    <section
 
+      id="about"
 
-<div className="max-w-6xl mx-auto">
+      className="
+        text-white
 
+        px-6
+        md:px-8
 
-<h2
-className="
-text-3xl
-md:text-4xl
+        py-16
+        md:py-20
+      "
 
-font-bold
+    >
 
-text-purple-400
+      <div className="max-w-6xl mx-auto">
 
-mb-8
-md:mb-10
 
+        {/* Section Title */}
 
-text-center
-md:text-left
+        <h2
 
+          className="
+            text-3xl
+            md:text-4xl
 
-hover:drop-shadow-[0_0_20px_rgba(168,85,247,1)]
+            font-bold
+            font-mono
 
-transition
-"
->
+            text-green-400
 
-About Me
+            mb-10
 
-</h2>
+            text-center
+            md:text-left
 
+            drop-shadow-[0_0_15px_rgba(0,255,136,0.6)]
+          "
 
+        >
 
+          $ cat about_me.txt
 
+        </h2>
 
 
-<div
 
-className="
+        {/* About Terminal */}
 
-bg-white/5
+        <div
 
-backdrop-blur-xl
+          className="
+            bg-black/60
 
+            border
+            border-green-500/15
 
-border
+            rounded-xl
 
-border-purple-500/30
+            overflow-hidden
 
+            mb-8
+          "
 
-rounded-2xl
+        >
 
+          {/* Terminal Header */}
 
-p-6
+          <div
 
-md:p-8
+            className="
+              flex
 
+              items-center
 
+              gap-2
 
-transition-all
+              px-4
+              py-3
 
+              bg-black/70
 
-duration-700
+              border-b
+              border-green-500/10
+            "
 
+          >
 
+            <span className="w-3 h-3 rounded-full bg-red-500/50">
+            </span>
 
-hover:scale-105
+            <span className="w-3 h-3 rounded-full bg-yellow-500/50">
+            </span>
 
+            <span className="w-3 h-3 rounded-full bg-green-500/50">
+            </span>
 
-hover:-translate-y-3
+            <span className="ml-3 text-xs text-gray-600 font-mono">
+              about_me.txt
+            </span>
 
+          </div>
 
 
-hover:bg-purple-500/10
 
+          {/* About Content */}
 
+          <div
 
-hover:border-purple-300
+            className="
+              p-6
+              md:p-8
 
+              font-mono
+            "
 
+          >
 
-hover:shadow-[0_0_45px_rgba(168,85,247,0.6)]
+            <p
 
-"
+              className="
+                text-gray-400
 
->
+                text-sm
+                md:text-base
 
+                leading-relaxed
 
+                mb-5
+              "
 
-<p
+            >
 
-className="
+              <span className="text-green-500">
+                &gt;
+              </span>
 
-text-gray-300
+              {" "}
 
+              I am Md Shahidul Islam, a Cybersecurity and
+              Penetration Testing enthusiast with a Bachelor
+              of Science in Computer Science and Engineering.
 
-text-base
+            </p>
 
-md:text-lg
 
 
-leading-relaxed
+            <p
 
+              className="
+                text-gray-400
 
-mb-5
+                text-sm
+                md:text-base
 
-"
+                leading-relaxed
 
->
+                mb-5
+              "
 
-I am Md Shahidul Islam, a Cybersecurity and Penetration
-Testing enthusiast with a Bachelor of Science in Computer
-Science and Engineering. My primary interests include web
-application security, vulnerability assessment, penetration
-testing, and machine learning-based cyber threat detection.
+            >
 
-</p>
+              <span className="text-green-500">
+                &gt;
+              </span>
 
+              {" "}
 
+              My primary interests include web application
+              security, vulnerability assessment, penetration
+              testing and machine learning-based cyber threat
+              detection.
 
+            </p>
 
 
 
-<p
+            <p
 
-className="
+              className="
+                text-gray-400
 
-text-gray-300
+                text-sm
+                md:text-base
 
+                leading-relaxed
+              "
 
-text-base
+            >
 
-md:text-lg
+              <span className="text-green-500">
+                &gt;
+              </span>
 
+              {" "}
 
-leading-relaxed
+              I have hands-on experience with security testing
+              methodologies and tools including OWASP, Burp Suite,
+              Nmap, SQLMap, Nuclei, Acunetix and Linux-based
+              security environments.
 
-"
+            </p>
 
->
+          </div>
 
-I have hands-on experience with security testing tools and
-methodologies including OWASP, Burp Suite, Nmap, SQLMap,
-Nuclei, Acunetix and Linux-based security environments.
-My research focuses on improving cybersecurity solutions
-through machine learning approaches.
+        </div>
 
-</p>
 
 
+        {/* Information Cards */}
 
-</div>
+        <div
 
+          className="
+            grid
 
+            grid-cols-1
 
+            md:grid-cols-2
 
+            gap-6
+            md:gap-8
+          "
 
+        >
 
 
+          {/* Education */}
 
-<div
+          <div
 
-className="
+            className="
+              bg-black/60
 
-grid
+              border
+              border-green-500/15
 
-grid-cols-1
+              rounded-xl
 
-md:grid-cols-2
+              p-6
 
+              font-mono
 
-gap-8
+              transition-all
+              duration-300
 
+              hover:-translate-y-2
 
-mt-8
+              hover:bg-green-500/5
 
-md:mt-10
+              hover:border-green-400/40
 
-"
+              hover:shadow-[0_0_25px_rgba(0,255,136,0.1)]
+            "
 
->
+          >
 
+            <div className="text-xs text-gray-600 mb-4">
 
+              MODULE_01
 
+            </div>
 
 
 
-{/* Education */}
+            <h3
 
-<div
+              className="
+                text-xl
 
-className="
+                font-bold
 
-bg-white/5
+                text-green-400
 
-backdrop-blur-xl
+                mb-5
+              "
 
+            >
 
-border
+              Education
 
-border-purple-500/30
+            </h3>
 
 
-rounded-2xl
 
+            <div className="space-y-2 text-sm">
 
-p-6
+              <p className="text-gray-300">
 
+                BSc in Computer Science & Engineering
 
+              </p>
 
-transition-all
 
+              <p className="text-gray-500">
 
-duration-700
+                Shanto-Mariam University of Creative Technology
 
+              </p>
 
 
-hover:scale-105
+              <p className="text-gray-500">
 
+                Duration:
 
-hover:-translate-y-3
+                <span className="text-green-400 ml-2">
 
+                  2019 - 2024
 
+                </span>
 
-hover:bg-purple-500/10
+              </p>
 
+            </div>
 
+          </div>
 
-hover:border-purple-300
 
 
+          {/* Research Interest */}
 
-hover:shadow-[0_0_45px_rgba(168,85,247,0.7)]
+          <div
 
-"
+            className="
+              bg-black/60
 
->
+              border
+              border-green-500/15
 
+              rounded-xl
 
-<h3
+              p-6
 
-className="
+              font-mono
 
-text-xl
+              transition-all
+              duration-300
 
-md:text-2xl
+              hover:-translate-y-2
 
+              hover:bg-green-500/5
 
-font-bold
+              hover:border-green-400/40
 
+              hover:shadow-[0_0_25px_rgba(0,255,136,0.1)]
+            "
 
-text-purple-300
+          >
 
+            <div className="text-xs text-gray-600 mb-4">
 
-mb-4
+              MODULE_02
 
-"
+            </div>
 
->
 
-Education
 
-</h3>
+            <h3
 
+              className="
+                text-xl
 
+                font-bold
 
-<p className="text-gray-300">
-BSc in Computer Science & Engineering
-</p>
+                text-green-400
 
+                mb-5
+              "
 
-<p className="text-gray-300">
-Shanto-Mariam University of Creative Technology
-</p>
+            >
 
+              Research Interest
 
-<p className="text-gray-300">
-CGPA: 3.38 / 4.00
-</p>
+            </h3>
 
 
-<p className="text-gray-300">
-2019 - 2024
-</p>
 
+            <div className="space-y-3 text-sm">
 
 
-</div>
+              <p className="text-gray-400">
 
+                <span className="text-green-500">
 
+                  [+]
 
+                  
+                </span>
 
+                {" "}
 
+                Cyber Threat Detection
 
+              </p>
 
-{/* Research Interest */}
 
 
-<div
+              <p className="text-gray-400">
 
-className="
+                <span className="text-green-500">
 
-bg-white/5
+                  [+]
 
-backdrop-blur-xl
+                  
+                </span>
 
+                {" "}
 
-border
+                Machine Learning Security
 
-border-purple-500/30
+              </p>
 
 
-rounded-2xl
 
+              <p className="text-gray-400">
 
-p-6
+                <span className="text-green-500">
 
+                  [+]
 
+                  
+                </span>
 
-transition-all
+                {" "}
 
+                Web Application Security
 
-duration-700
+              </p>
 
 
 
-hover:scale-105
+              <p className="text-gray-400">
 
+                <span className="text-green-500">
 
-hover:-translate-y-3
+                  [+]
 
+                  
+                </span>
 
+                {" "}
 
-hover:bg-purple-500/10
+                Malware Analysis
 
+              </p>
 
 
-hover:border-purple-300
+            </div>
 
+          </div>
 
 
-hover:shadow-[0_0_45px_rgba(168,85,247,0.7)]
+        </div>
 
-"
 
->
 
+        {/* Status */}
 
+        <div
 
-<h3
+          className="
+            mt-8
 
-className="
+            font-mono
 
-text-xl
+            text-sm
 
-md:text-2xl
+            text-gray-600
+          "
 
+        >
 
-font-bold
+          <span className="text-green-400">
 
+            root@shahid:~$
 
-text-purple-300
+          </span>
 
+          {" "}
 
-mb-4
+          about_module loaded
 
-"
+          <span className="text-green-400 ml-2">
 
->
+            ✓
 
-Research Interest
+          </span>
 
-</h3>
+        </div>
 
 
+      </div>
 
-<p className="text-gray-300">
-Cyber Threat Detection
-</p>
+    </section>
 
-
-<p className="text-gray-300">
-Machine Learning Security
-</p>
-
-
-<p className="text-gray-300">
-Web Application Security
-</p>
-
-
-<p className="text-gray-300">
-Malware Analysis
-</p>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
+  );
 
 }
 
