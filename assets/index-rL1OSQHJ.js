@@ -2085,7 +2085,7 @@ text-gray-600\r
               hover:scale-105\r
 \r
               active:scale-110\r
-            `,children:[(0,H.jsx)(Hu,{}),`LinkedIn`]})]})]})]})})}function Gu(){return(0,b.useEffect)(()=>{let e=document.querySelectorAll(`.reveal`),t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add(`show`)})},{threshold:.25});return e.forEach(e=>{t.observe(e)}),()=>{t.disconnect()}},[]),null}function Ku(){return(0,H.jsxs)(`div`,{className:`min-h-screen bg-[#050505] text-white`,children:[(0,H.jsx)(Gu,{}),(0,H.jsx)(yu,{}),(0,H.jsxs)(`main`,{children:[(0,H.jsx)(xu,{}),(0,H.jsx)(Su,{}),(0,H.jsx)(Cu,{}),(0,H.jsx)(wu,{}),(0,H.jsx)(Tu,{}),(0,H.jsx)(Eu,{}),(0,H.jsx)(Du,{}),(0,H.jsx)(Z,{})]}),(0,H.jsxs)(`footer`,{className:`
+            `,children:[(0,H.jsx)(Hu,{}),`LinkedIn`]})]})]})]})})}function Gu(){return(0,b.useEffect)(()=>{let e=document.querySelectorAll(`section, .group`);e.forEach(e=>{e.classList.add(`reveal`)});let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add(`active`)})},{threshold:.15});return e.forEach(e=>{t.observe(e)}),()=>{e.forEach(e=>{t.unobserve(e)})}},[]),null}function Ku(){return(0,H.jsxs)(`div`,{className:`min-h-screen bg-[#050505] text-white`,children:[(0,H.jsx)(Gu,{}),(0,H.jsx)(yu,{}),(0,H.jsxs)(`main`,{children:[(0,H.jsx)(xu,{}),(0,H.jsx)(Su,{}),(0,H.jsx)(Cu,{}),(0,H.jsx)(wu,{}),(0,H.jsx)(Tu,{}),(0,H.jsx)(Eu,{}),(0,H.jsx)(Du,{}),(0,H.jsx)(Z,{})]}),(0,H.jsxs)(`footer`,{className:`
           border-t
           border-green-500/20
 
