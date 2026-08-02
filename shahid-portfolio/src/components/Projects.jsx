@@ -1,5 +1,6 @@
 function Projects() {
 
+
   const projects = [
 
     {
@@ -14,6 +15,7 @@ function Projects() {
         "Explainable AI",
         "Malware Detection"
       ]
+
     },
 
 
@@ -28,6 +30,7 @@ function Projects() {
         "Dart",
         "Firebase"
       ]
+
     },
 
 
@@ -42,6 +45,7 @@ function Projects() {
         "CSS",
         "JavaScript"
       ]
+
     },
 
 
@@ -56,6 +60,7 @@ function Projects() {
         "JavaScript",
         "Frontend"
       ]
+
     },
 
 
@@ -70,12 +75,15 @@ function Projects() {
         "Database",
         "Software Development"
       ]
+
     }
 
   ];
 
 
+
   return (
+
 
     <section
 
@@ -93,10 +101,10 @@ function Projects() {
 
     >
 
+
       <div className="max-w-6xl mx-auto">
 
 
-        {/* Title */}
 
         <h2
 
@@ -105,6 +113,7 @@ function Projects() {
             md:text-4xl
 
             font-bold
+
             font-mono
 
             text-green-400
@@ -125,7 +134,7 @@ function Projects() {
 
 
 
-        {/* Terminal */}
+
 
         <div
 
@@ -148,17 +157,24 @@ function Projects() {
 
         >
 
+
           <p className="text-gray-500">
 
+
             <span className="text-green-400">
+
               root@shahid:~$
+
             </span>
+
 
             {" "}
 
             access_project_repository
 
+
           </p>
+
 
 
           <p className="text-green-400 mt-2">
@@ -167,11 +183,13 @@ function Projects() {
 
           </p>
 
+
         </div>
 
 
 
-        {/* Project Grid */}
+
+
 
         <div
 
@@ -179,267 +197,555 @@ function Projects() {
             grid
 
             grid-cols-1
+
             md:grid-cols-2
 
             gap-6
-            md:gap-8
+
           "
 
         >
 
-          {projects.map((project, index) => (
+
+
+
+          {projects.map((project,index)=>(
+
+
 
             <article
 
+
               key={index}
 
+
               className="
+
                 group
+
+                relative
+
 
                 bg-black/60
 
+
                 border
+
                 border-green-500/15
+
 
                 rounded-xl
 
+
                 p-6
+
+
                 md:p-7
 
-                transition-all
-                duration-300
 
-                hover:-translate-y-2
+
+                font-mono
+
+
+
+                transform-gpu
+
+
+
+                transition-all
+
+
+                duration-500
+
+
+
+                ease-out
+
+
+
+                hover:-translate-y-4
+
+
+
+                hover:rotate-1
+
+
 
                 hover:bg-green-500/5
 
-                hover:border-green-400/50
 
-                hover:shadow-[0_0_25px_rgba(0,255,136,0.12)]
+
+                hover:border-green-400/60
+
+
+
+                hover:shadow-[0_0_40px_rgba(0,255,136,0.25)]
+
+
+
+                active:scale-105
+
+
+
+                active:-translate-y-3
+
+
+
+                active:border-green-400
+
+
+
+                active:shadow-[0_0_45px_rgba(0,255,136,0.35)]
+
+
+
+                overflow-hidden
+
               "
+
 
             >
 
-              {/* Project ID */}
+
+
+
 
               <div
 
                 className="
-                  flex
 
-                  justify-between
+                  absolute
 
-                  items-center
-
-                  mb-5
-
-                  font-mono
-
-                  text-xs
-                "
-
-              >
-
-                <span className="text-gray-600">
-
-                  PROJECT_{String(index + 1).padStart(2, "0")}
-
-                </span>
+                  inset-0
 
 
-                <span className="text-green-500">
+                  bg-gradient-to-br
 
-                  [ACTIVE]
 
-                </span>
+                  from-green-400/10
 
-              </div>
+
+                  via-transparent
+
+
+                  to-transparent
 
 
 
-              {/* Title */}
+                  opacity-0
 
-              <h3
 
-                className="
-                  text-xl
-                  md:text-2xl
 
-                  font-bold
+                  group-hover:opacity-100
 
-                  font-mono
 
-                  text-green-400
-
-                  mb-4
-
-                  group-hover:text-green-300
 
                   transition
+
+
+
+                  duration-500
+
                 "
 
-              >
-
-                {project.title}
-
-              </h3>
+              />
 
 
 
-              {/* Description */}
-
-              <p
-
-                className="
-                  text-gray-400
-
-                  leading-relaxed
-
-                  mb-6
-                "
-
-              >
-
-                {project.description}
-
-              </p>
 
 
 
-              {/* Technologies */}
 
-              <div
+              <div className="relative z-10">
 
-                className="
-                  flex
 
-                  flex-wrap
 
-                  gap-2
-                "
 
-              >
 
-                {project.tech.map((item, i) => (
+                <div
 
-                  <span
 
-                    key={i}
+                  className="
 
-                    className="
-                      px-3
-                      py-1.5
+                    flex
 
-                      rounded-md
+                    justify-between
 
-                      bg-green-500/5
+                    items-center
 
-                      border
-                      border-green-500/15
 
-                      text-green-400
+                    mb-5
 
-                      text-xs
 
-                      font-mono
+                    text-xs
 
-                      transition
+                  "
 
-                      hover:border-green-400/50
 
-                      hover:bg-green-500/10
-                    "
+                >
 
-                  >
 
-                    {item}
+                  <span className="text-gray-600">
+
+
+                    PROJECT_{String(index+1).padStart(2,"0")}
+
 
                   </span>
 
-                ))}
+
+
+
+                  <span className="text-green-500">
+
+
+                    [ACTIVE]
+
+
+                  </span>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <h3
+
+
+                  className="
+
+                    text-xl
+
+                    md:text-2xl
+
+
+                    font-bold
+
+
+
+                    text-green-400
+
+
+
+                    mb-4
+
+
+
+                    leading-tight
+
+
+
+                    group-hover:text-green-300
+
+
+
+                    transition
+
+                  "
+
+
+                >
+
+
+                  {project.title}
+
+
+                </h3>
+
+
+
+
+
+
+
+
+                <p
+
+
+                  className="
+
+                    text-gray-400
+
+
+                    leading-relaxed
+
+
+                    mb-6
+
+                  "
+
+
+                >
+
+
+                  {project.description}
+
+
+                </p>
+
+
+
+
+
+
+
+
+                <div
+
+
+                  className="
+
+                    flex
+
+                    flex-wrap
+
+                    gap-2
+
+                  "
+
+
+                >
+
+
+
+                  {project.tech.map((item,i)=>(
+
+
+
+                    <span
+
+
+                      key={i}
+
+
+                      className="
+
+                        px-3
+
+                        py-1.5
+
+
+                        rounded-md
+
+
+
+                        bg-green-500/5
+
+
+
+                        border
+
+                        border-green-500/15
+
+
+
+                        text-green-400
+
+
+
+                        text-xs
+
+
+
+                        transition-all
+
+
+
+                        duration-300
+
+
+
+                        hover:border-green-400
+
+
+
+                        hover:bg-green-500/10
+
+                      "
+
+
+                    >
+
+
+
+                      {item}
+
+
+
+                    </span>
+
+
+
+                  ))}
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div
+
+
+                  className="
+
+                    mt-6
+
+
+                    pt-4
+
+
+
+                    border-t
+
+
+
+                    border-green-500/10
+
+
+
+                    text-xs
+
+
+
+                    text-gray-600
+
+                  "
+
+
+                >
+
+
+
+                  <span className="text-green-500">
+
+
+                    $
+
+                  </span>
+
+
+                  {" "}
+
+
+                  project --status
+
+
+
+                  <span className="text-green-400 ml-2">
+
+
+                    OK
+
+
+                  </span>
+
+
+                </div>
+
+
+
+
 
               </div>
 
 
 
-              {/* Command */}
-
-              <div
-
-                className="
-                  mt-6
-
-                  pt-4
-
-                  border-t
-                  border-green-500/10
-
-                  font-mono
-
-                  text-xs
-
-                  text-gray-600
-                "
-
-              >
-
-                <span className="text-green-500">
-                  $
-                </span>
-
-                {" "}
-
-                project --status
-
-                <span className="text-green-400 ml-2">
-                  OK
-                </span>
-
-              </div>
 
 
             </article>
 
+
+
+
+
           ))}
+
+
+
+
 
         </div>
 
 
 
-        {/* Footer */}
+
+
+
 
         <div
 
+
           className="
+
             mt-8
+
 
             font-mono
 
+
             text-sm
 
+
             text-gray-500
+
           "
+
 
         >
 
+
           <span className="text-green-400">
+
+
             root@shahid:~$
+
+
           </span>
+
+
 
           {" "}
 
+
+
           {projects.length} projects loaded.
 
+
+
           <span className="text-green-400 ml-2">
+
+
             ✓
+
+
           </span>
 
+
         </div>
+
+
+
 
 
       </div>
 
+
+
     </section>
+
+
 
   );
 

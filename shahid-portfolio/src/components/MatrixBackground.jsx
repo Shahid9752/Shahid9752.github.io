@@ -1,215 +1,201 @@
 import { useEffect, useRef } from "react";
 
 
-export default function MatrixBackground(){
+function MatrixBackground(){
 
-  const canvasRef = useRef(null);
 
+const canvasRef = useRef(null);
 
-  useEffect(()=>{
 
 
-    const canvas = canvasRef.current;
+useEffect(()=>{
 
-    const ctx = canvas.getContext("2d");
 
+const canvas = canvasRef.current;
 
-    let width = window.innerWidth;
+const ctx = canvas.getContext("2d");
 
-    let height = window.innerHeight;
 
 
-    canvas.width = width;
+let width = canvas.width = window.innerWidth;
 
-    canvas.height = height;
+let height = canvas.height = window.innerHeight;
 
 
 
-    const characters =
-    "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&@";
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&";
 
 
-    const fontSize = 18;
+const fontSize = 14;
 
 
-    let columns =
-    Math.floor(width / fontSize);
+let columns = Math.floor(width / fontSize);
 
 
-    let drops = [];
 
+let drops = Array(columns).fill(1);
 
 
-    for(let i = 0; i < columns; i++){
 
-      drops[i] =
-      Math.random() * height;
 
-    }
 
+function draw(){
 
 
+ctx.fillStyle = "rgba(3,6,4,0.08)";
 
+ctx.fillRect(0,0,width,height);
 
-    function draw(){
 
 
-      // Smooth dark trail
+ctx.fillStyle = "#00ff88";
 
-      ctx.fillStyle =
-      "rgba(0,0,0,0.06)";
+ctx.font = `${fontSize}px monospace`;
 
 
-      ctx.fillRect(
-        0,
-        0,
-        width,
-        height
-      );
 
+for(let i=0;i<drops.length;i++){
 
 
-      // Neon green but clean
 
-      ctx.fillStyle =
-      "#00ff88";
+const text = letters.charAt(
 
+Math.floor(Math.random()*letters.length)
 
-      ctx.font =
-      `${fontSize}px monospace`;
+);
 
 
 
+ctx.fillText(
 
-      for(let i = 0; i < drops.length; i++){
+text,
 
+i*fontSize,
 
-        const text =
-        characters[
-          Math.floor(
-            Math.random() *
-            characters.length
-          )
-        ];
+drops[i]*fontSize
 
+);
 
 
-        ctx.fillText(
 
-          text,
+if(
 
-          i * fontSize,
+drops[i]*fontSize > height
 
-          drops[i]
+&& Math.random()>0.975
 
-        );
+){
 
+drops[i]=0;
 
+}
 
-        // Medium slow speed
 
-        drops[i] +=
-        fontSize * 0.3;
 
+drops[i]++;
 
-
-        if(drops[i] > height){
-
-          drops[i] = 0;
-
-        }
-
-
-      }
-
-
-
-      requestAnimationFrame(draw);
-
-
-    }
-
-
-    draw();
-
-
-
-
-
-    function resize(){
-
-
-      width =
-      window.innerWidth;
-
-
-      height =
-      window.innerHeight;
-
-
-      canvas.width =
-      width;
-
-
-      canvas.height =
-      height;
-
-
-
-      columns =
-      Math.floor(
-        width / fontSize
-      );
-
-
-
-      drops =
-      Array(columns).fill(0);
-
-
-    }
-
-
-
-    window.addEventListener(
-      "resize",
-      resize
-    );
-
-
-
-    return ()=>{
-
-      window.removeEventListener(
-        "resize",
-        resize
-      );
-
-    };
-
-
-  },[]);
-
-
-
-
-  return(
-
-    <canvas
-
-      ref={canvasRef}
-
-      className="
-      fixed
-      inset-0
-      z-0
-      opacity-25
-      pointer-events-none
-      "
-
-    />
-
-  );
 
 
 }
+
+
+
+}
+
+
+
+const interval=setInterval(draw,45);
+
+
+
+
+
+function resize(){
+
+
+width = canvas.width = window.innerWidth;
+
+height = canvas.height = window.innerHeight;
+
+
+columns=Math.floor(width/fontSize);
+
+
+drops=Array(columns).fill(1);
+
+
+}
+
+
+
+window.addEventListener(
+
+"resize",
+
+resize
+
+);
+
+
+
+
+return()=>{
+
+
+clearInterval(interval);
+
+
+window.removeEventListener(
+
+"resize",
+
+resize
+
+);
+
+
+};
+
+
+},[]);
+
+
+
+
+
+
+return(
+
+
+<canvas
+
+
+ref={canvasRef}
+
+
+className="
+
+fixed
+
+inset-0
+
+pointer-events-none
+
+opacity-[0.12]
+
+z-[-1]
+
+"
+
+
+/>
+
+
+);
+
+
+}
+
+
+
+export default MatrixBackground;

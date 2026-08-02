@@ -1,287 +1,628 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 function Navbar() {
 
-  const [open, setOpen] = useState(false);
 
+const [open,setOpen] = useState(false);
 
-  const menuItems = [
-    "About",
-    "Skills",
-    "Projects",
-    "Experience",
-    "Research",
-    "Certificates",
-    "Contact"
-  ];
 
 
-  return (
+const menuItems = [
 
-    <nav
+"About",
+"Skills",
+"Projects",
+"Experience",
+"Research",
+"Certificates",
+"Contact"
 
-      className="
-        fixed
+];
 
-        top-0
-        left-0
 
-        w-full
 
-        z-50
 
-        bg-[#030604]/90
 
-        backdrop-blur-md
+return (
 
-        border-b
 
-        border-green-500/20
-      "
+<motion.nav
 
-    >
 
-      <div
+initial={{
 
-        className="
-          max-w-6xl
+y:-100,
 
-          mx-auto
+opacity:0
 
-          px-6
-          md:px-8
+}}
 
-          py-4
 
-          flex
+animate={{
 
-          justify-between
+y:0,
 
-          items-center
-        "
+opacity:1
 
-      >
+}}
 
 
-        {/* Logo */}
+transition={{
 
-        <a
+duration:.6
 
-          href="#home"
+}}
 
-          className="
-            font-mono
 
-            text-lg
-            md:text-xl
 
-            font-bold
+className="
+fixed
 
-            text-green-400
+top-0
 
-            hover:text-green-300
+left-0
 
-            transition
+w-full
 
-            whitespace-nowrap
-          "
+z-50
 
-        >
+bg-[#030604]/90
 
-          <span className="text-gray-500">
-            &lt;
-          </span>
+backdrop-blur-md
 
-          Shahid
+border-b
 
-          <span className="text-gray-500">
-            /&gt;
-          </span>
+border-green-500/20
+"
 
-        </a>
+>
 
 
+<div
 
-        {/* Desktop Menu */}
 
-        <div
+className="
+max-w-6xl
 
-          className="
-            hidden
+mx-auto
 
-            md:flex
+px-6
 
-            items-center
+md:px-8
 
-            gap-6
+py-4
 
-            font-mono
+flex
 
-            text-sm
-          "
+justify-between
 
-        >
+items-center
+"
 
-          {menuItems.map((item) => (
+>
 
-            <a
 
-              key={item}
 
-              href={`#${item.toLowerCase()}`}
 
-              className="
-                text-gray-400
 
-                transition-all
-                duration-300
+{/* Logo */}
 
-                hover:text-green-400
 
-                hover:-translate-y-0.5
-              "
+<motion.a
 
-            >
 
-              <span className="text-green-600">
-                ./ 
-              </span>
+href="#home"
 
-              {item}
 
-            </a>
 
-          ))}
+whileHover={{
 
-        </div>
+scale:1.08
 
+}}
 
 
-        {/* Mobile Button */}
 
-        <button
+transition={{
 
-          type="button"
+duration:.2
 
-          onClick={() => setOpen(!open)}
+}}
 
-          className="
-            md:hidden
 
-            text-green-400
 
-            text-2xl
+className="
+font-mono
 
-            font-mono
+text-lg
 
-            hover:text-green-300
+md:text-xl
 
-            transition
-          "
+font-bold
 
-          aria-label="Toggle navigation"
+text-green-400
 
-        >
+hover:text-green-300
 
-          {open ? "×" : "☰"}
+transition
 
-        </button>
+whitespace-nowrap
 
+drop-shadow-[0_0_10px_rgba(0,255,136,.6)]
+"
 
-      </div>
+>
 
 
+<span className="text-gray-500">
 
-      {/* Mobile Menu */}
+&lt;
 
-      {open && (
+</span>
 
-        <div
 
-          className="
-            md:hidden
+Shahid
 
-            bg-[#030604]/95
 
-            backdrop-blur-md
+<span className="text-gray-500">
 
-            border-t
+/&gt;
 
-            border-green-500/10
+</span>
 
-            px-6
 
-            py-5
-          "
 
-        >
+</motion.a>
 
-          <div
 
-            className="
-              flex
 
-              flex-col
 
-              gap-4
 
-              font-mono
 
-              text-sm
-            "
 
-          >
 
-            {menuItems.map((item) => (
 
-              <a
+{/* Desktop Menu */}
 
-                key={item}
 
-                href={`#${item.toLowerCase()}`}
 
-                onClick={() => setOpen(false)}
+<div
 
-                className="
-                  text-gray-400
 
-                  py-2
+className="
+hidden
 
-                  border-b
+md:flex
 
-                  border-green-500/10
+items-center
 
-                  transition
+gap-6
 
-                  hover:text-green-400
-                "
+font-mono
 
-              >
+text-sm
+"
 
-                <span className="text-green-500">
-                  $ cd
-                </span>
+>
 
-                {" "}
 
-                {item}
 
-              </a>
+{
 
-            ))}
 
-          </div>
+menuItems.map((item,index)=>(
 
-        </div>
 
-      )}
+<motion.a
 
-    </nav>
 
-  );
+key={item}
+
+
+
+href={`#${item.toLowerCase()}`}
+
+
+
+initial={{
+
+opacity:0,
+
+y:-10
+
+}}
+
+
+
+animate={{
+
+opacity:1,
+
+y:0
+
+}}
+
+
+
+transition={{
+
+delay:index*.08
+
+}}
+
+
+
+whileHover={{
+
+y:-3,
+
+scale:1.05
+
+}}
+
+
+
+className="
+text-gray-400
+
+transition-all
+
+duration-300
+
+hover:text-green-400
+"
+
+>
+
+
+<span className="text-green-600">
+
+./
+
+</span>
+
+
+{item}
+
+
+
+</motion.a>
+
+
+
+))
+
 
 }
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{/* Mobile Button */}
+
+
+
+<motion.button
+
+
+type="button"
+
+
+
+onClick={()=>setOpen(!open)}
+
+
+
+whileTap={{
+
+scale:.8
+
+}}
+
+
+
+className="
+md:hidden
+
+text-green-400
+
+text-3xl
+
+font-mono
+
+hover:text-green-300
+
+transition
+"
+
+
+
+aria-label="Toggle navigation"
+
+
+>
+
+
+{
+
+
+open ? "×" : "☰"
+
+
+}
+
+
+</motion.button>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{/* Mobile Menu */}
+
+
+
+
+<AnimatePresence>
+
+
+{
+
+
+open && (
+
+
+
+
+<motion.div
+
+
+
+initial={{
+
+height:0,
+
+opacity:0
+
+}}
+
+
+
+animate={{
+
+height:"auto",
+
+opacity:1
+
+}}
+
+
+
+exit={{
+
+height:0,
+
+opacity:0
+
+}}
+
+
+
+transition={{
+
+duration:.3
+
+}}
+
+
+
+className="
+md:hidden
+
+overflow-hidden
+
+bg-[#030604]/95
+
+backdrop-blur-md
+
+border-t
+
+border-green-500/10
+
+px-6
+
+py-5
+"
+
+>
+
+
+
+<div
+
+
+className="
+flex
+
+flex-col
+
+gap-4
+
+font-mono
+
+text-sm
+"
+
+>
+
+
+
+{
+
+
+menuItems.map((item,index)=>(
+
+
+
+<motion.a
+
+
+
+key={item}
+
+
+
+href={`#${item.toLowerCase()}`}
+
+
+
+onClick={()=>setOpen(false)}
+
+
+
+initial={{
+
+opacity:0,
+
+x:-30
+
+}}
+
+
+
+animate={{
+
+opacity:1,
+
+x:0
+
+}}
+
+
+
+transition={{
+
+delay:index*.05
+
+}}
+
+
+
+whileTap={{
+
+scale:.95
+
+}}
+
+
+
+className="
+text-gray-400
+
+py-2
+
+border-b
+
+border-green-500/10
+
+transition
+
+hover:text-green-400
+"
+
+>
+
+
+
+<span className="text-green-500">
+
+$
+
+</span>
+
+
+{" "}
+
+
+cd
+
+
+{" "}
+
+
+{item}
+
+
+
+</motion.a>
+
+
+
+))
+
+
+}
+
+
+
+
+
+</div>
+
+
+
+
+
+</motion.div>
+
+
+
+
+)
+
+
+}
+
+
+
+</AnimatePresence>
+
+
+
+
+
+
+
+</motion.nav>
+
+
+);
+
+
+}
+
 
 
 export default Navbar;

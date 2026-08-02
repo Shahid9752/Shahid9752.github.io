@@ -39,8 +39,6 @@ function Skills() {
       <div className="max-w-6xl mx-auto">
 
 
-        {/* Section Title */}
-
         <h2
 
           className="
@@ -67,8 +65,6 @@ function Skills() {
         </h2>
 
 
-
-        {/* Terminal Status */}
 
         <div
 
@@ -110,11 +106,11 @@ function Skills() {
 
           </p>
 
+
         </div>
 
 
 
-        {/* Skills Grid */}
 
         <div
 
@@ -126,13 +122,14 @@ function Skills() {
             lg:grid-cols-3
             xl:grid-cols-4
 
-            gap-4
-            md:gap-5
+            gap-5
           "
 
         >
 
-          {skills.map((skill, index) => (
+
+          {skills.map((skill,index)=>(
+
 
             <div
 
@@ -141,115 +138,193 @@ function Skills() {
               className="
                 group
 
+                relative
+
                 bg-black/60
 
                 border
                 border-green-500/15
 
-                rounded-lg
+                rounded-xl
 
                 p-5
 
                 font-mono
 
-                transition-all
-                duration-300
 
-                hover:-translate-y-1
+                transform-gpu
+
+                transition-all
+
+                duration-500
+
+                ease-out
+
+
+                hover:-translate-y-3
+
+                hover:rotate-1
+
+
+                hover:border-green-400/60
+
 
                 hover:bg-green-500/5
 
-                hover:border-green-400/50
 
-                hover:shadow-[0_0_20px_rgba(0,255,136,0.12)]
+                hover:shadow-[0_0_35px_rgba(0,255,136,0.25)]
 
-                cursor-default
+
+                active:scale-105
+
+                active:-translate-y-3
+
+
+                active:border-green-400
+
+
+                active:shadow-[0_0_40px_rgba(0,255,136,0.35)]
+
+
+                overflow-hidden
+
               "
 
             >
 
-              {/* Number */}
+
 
               <div
 
                 className="
-                  text-xs
+                  absolute
 
-                  text-gray-600
+                  inset-0
 
-                  mb-4
-                "
+                  bg-gradient-to-br
 
-              >
+                  from-green-400/10
 
-                SKILL_{String(index + 1).padStart(2, "0")}
+                  to-transparent
 
-              </div>
+                  opacity-0
 
-
-
-              {/* Skill */}
-
-              <div
-
-                className="
-                  text-green-400
-
-                  font-semibold
-
-                  text-sm
-                  md:text-base
-
-                  group-hover:text-green-300
+                  group-hover:opacity-100
 
                   transition
+
+                  duration-500
                 "
 
-              >
-
-                <span className="text-green-600">
-                  $
-                </span>
-
-                {" "}
-
-                {skill}
-
-              </div>
+              />
 
 
 
-              {/* Status */}
 
               <div
 
                 className="
-                  mt-4
-
-                  text-xs
-
-                  text-gray-600
+                  relative
+                  z-10
                 "
 
               >
 
-                status:
 
-                <span className="text-green-500 ml-1">
-                  available
-                </span>
+                <div
+
+                  className="
+                    text-xs
+
+                    text-gray-600
+
+                    mb-4
+                  "
+
+                >
+
+                  SKILL_{String(index+1).padStart(2,"0")}
+
+
+                </div>
+
+
+
+
+                <div
+
+                  className="
+                    text-green-400
+
+                    font-semibold
+
+                    text-sm
+
+                    md:text-base
+
+                    group-hover:text-green-300
+
+                    transition
+                  "
+
+                >
+
+                  <span className="text-green-600">
+
+                    $
+
+                  </span>
+
+
+                  {" "}
+
+
+                  {skill}
+
+
+                </div>
+
+
+
+
+                <div
+
+                  className="
+                    mt-4
+
+                    text-xs
+
+                    text-gray-600
+                  "
+
+                >
+
+                  status:
+
+                  <span className="text-green-500 ml-1">
+
+                    available
+
+                  </span>
+
+
+                </div>
+
 
               </div>
+
 
             </div>
 
+
           ))}
+
 
         </div>
 
 
 
-        {/* Footer */}
+
 
         <div
 
@@ -266,23 +341,33 @@ function Skills() {
         >
 
           <span className="text-green-400">
+
             root@shahid:~$
+
           </span>
+
 
           {" "}
 
           security stack initialized.
 
+
           <span className="text-green-400">
+
             {" "}✓
+
           </span>
+
 
         </div>
 
 
+
       </div>
 
+
     </section>
+
 
   );
 

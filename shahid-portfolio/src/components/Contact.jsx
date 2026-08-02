@@ -1,13 +1,11 @@
-import {
-  FaLinkedin,
-  FaGithub,
-  FaEnvelope
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 
 function Contact() {
 
+
   return (
+
 
     <section
 
@@ -15,20 +13,18 @@ function Contact() {
 
       className="
         text-white
-
         px-6
         md:px-8
-
         py-16
         md:py-20
       "
 
     >
 
-      <div className="max-w-4xl mx-auto">
+
+      <div className="max-w-6xl mx-auto">
 
 
-        {/* Section Title */}
 
         <h2
 
@@ -44,6 +40,7 @@ function Contact() {
             mb-10
 
             text-center
+            md:text-left
 
             drop-shadow-[0_0_15px_rgba(0,255,136,0.7)]
           "
@@ -56,434 +53,268 @@ function Contact() {
 
 
 
-        {/* Terminal Window */}
+
+
 
         <div
 
           className="
-            bg-black/70
+            bg-black/60
 
             border
-            border-green-500/30
+            border-green-500/20
 
             rounded-xl
 
-            overflow-hidden
+            p-6
+            md:p-10
 
-            shadow-[0_0_30px_rgba(0,255,136,0.08)]
+            font-mono
+
+            transition-all
+            duration-500
+
+            hover:border-green-400
+
+            hover:shadow-[0_0_40px_rgba(0,255,136,0.2)]
+
+            active:scale-[1.02]
           "
 
         >
 
 
-          {/* Terminal Header */}
+
+
+          <p className="text-gray-500 mb-6">
+
+            <span className="text-green-400">
+
+              root@shahid:~$
+
+            </span>
+
+            {" "}
+
+            establish_connection
+
+          </p>
+
+
+
+
+
+          <p
+
+            className="
+              text-gray-400
+
+              leading-relaxed
+
+              mb-8
+            "
+
+          >
+
+            Interested in cybersecurity projects,
+            security research or collaboration?
+            Feel free to contact me.
+
+          </p>
+
+
+
+
+
+
 
           <div
 
             className="
               flex
+
+              flex-col
+
+              sm:flex-row
+
+              gap-5
+
+            "
+
+          >
+
+
+
+
+
+          <a
+
+            href="mailto:shahid9752.mi@gmail.com"
+
+            className="
+              flex
               items-center
-              gap-2
+              justify-center
+
+              gap-3
 
               px-5
               py-3
 
-              border-b
-              border-green-500/20
 
-              bg-black/80
+              rounded-lg
+
+
+              bg-green-500/10
+
+
+              border
+              border-green-500/30
+
+
+              text-green-400
+
+
+              transition-all
+              duration-300
+
+
+              hover:scale-105
+
+              active:scale-110
+
+
+              hover:shadow-[0_0_25px_rgba(0,255,136,0.3)]
             "
 
           >
 
-            <span className="w-3 h-3 rounded-full bg-red-500/70">
-            </span>
+            <FaEnvelope/>
 
-            <span className="w-3 h-3 rounded-full bg-yellow-500/70">
-            </span>
+            Email
 
-            <span className="w-3 h-3 rounded-full bg-green-500/70">
-            </span>
-
-
-            <span className="
-              ml-3
-              text-xs
-              font-mono
-              text-gray-500
-            ">
-
-              shahid@cybersecurity:~
-
-            </span>
-
-          </div>
+          </a>
 
 
 
-          {/* Terminal Content */}
 
-          <div
+
+          <a
+
+            href="https://github.com/Shahid9752"
+
+            target="_blank"
 
             className="
-              p-6
-              md:p-10
+              flex
+              items-center
+              justify-center
 
-              font-mono
+              gap-3
+
+              px-5
+              py-3
+
+
+              rounded-lg
+
+
+              border
+              border-gray-700
+
+
+              text-gray-400
+
+
+              hover:text-green-400
+
+
+              transition
+
+
+              hover:scale-105
+
+              active:scale-110
             "
 
           >
 
+            <FaGithub/>
 
-            {/* Command */}
+            Github
 
-            <div className="text-sm mb-6">
+          </a>
 
-              <span className="text-green-400">
-                root@shahid:~$
-              </span>
 
-              {" "}
 
-              ./connect.sh
 
-            </div>
 
 
+          <a
 
-            {/* Message */}
+            href="#"
 
-            <p
+            className="
+              flex
+              items-center
+              justify-center
 
-              className="
-                text-gray-400
+              gap-3
 
-                leading-relaxed
+              px-5
+              py-3
 
-                mb-8
-              "
 
-            >
+              rounded-lg
 
-              Interested in cybersecurity, research collaboration
-              or professional opportunities? Feel free to connect
-              with me.
 
-            </p>
+              border
+              border-gray-700
 
 
+              text-gray-400
 
-            {/* Status */}
 
-            <div
+              hover:text-green-400
 
-              className="
-                text-sm
 
-                text-gray-500
+              transition
 
-                mb-8
 
-                space-y-2
-              "
+              hover:scale-105
 
-            >
+              active:scale-110
+            "
 
-              <p>
+          >
 
-                <span className="text-green-400">
-                  [+]
-                </span>
+            <FaLinkedin/>
 
-                {" "}
+            LinkedIn
 
-                Secure connection available
+          </a>
 
-              </p>
 
 
-              <p>
-
-                <span className="text-green-400">
-                  [+]
-                </span>
-
-                {" "}
-
-                Communication channel ready
-
-              </p>
-
-
-              <p>
-
-                <span className="text-green-400">
-                  [+]
-                </span>
-
-                {" "}
-
-                Awaiting connection...
-
-              </p>
-
-            </div>
-
-
-
-            {/* Social Links */}
-
-            <div
-
-              className="
-                grid
-
-                grid-cols-1
-                sm:grid-cols-3
-
-                gap-4
-              "
-
-            >
-
-
-              {/* Email */}
-
-              <a
-
-                href="mailto:shahid9752.mi@gmail.com"
-
-                className="
-                  group
-
-                  flex
-                  flex-col
-
-                  items-center
-                  justify-center
-
-                  gap-3
-
-                  p-5
-
-                  rounded-lg
-
-                  bg-green-500/5
-
-                  border
-                  border-green-500/20
-
-                  text-green-400
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-green-500/10
-
-                  hover:border-green-400
-
-                  hover:-translate-y-1
-
-                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
-                "
-
-              >
-
-                <FaEnvelope
-
-                  size={32}
-
-                  className="
-                    group-hover:scale-110
-
-                    transition
-                  "
-
-                />
-
-                <span className="text-sm">
-                  Email
-                </span>
-
-              </a>
-
-
-
-              {/* LinkedIn */}
-
-              <a
-
-                href="https://www.linkedin.com/in/md-shahid-nur/"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-                className="
-                  group
-
-                  flex
-                  flex-col
-
-                  items-center
-                  justify-center
-
-                  gap-3
-
-                  p-5
-
-                  rounded-lg
-
-                  bg-green-500/5
-
-                  border
-                  border-green-500/20
-
-                  text-green-400
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-green-500/10
-
-                  hover:border-green-400
-
-                  hover:-translate-y-1
-
-                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
-                "
-
-              >
-
-                <FaLinkedin
-
-                  size={32}
-
-                  className="
-                    group-hover:scale-110
-
-                    transition
-                  "
-
-                />
-
-                <span className="text-sm">
-                  LinkedIn
-                </span>
-
-              </a>
-
-
-
-              {/* GitHub */}
-
-              <a
-
-                href="https://github.com/Shahid9752"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-                className="
-                  group
-
-                  flex
-                  flex-col
-
-                  items-center
-                  justify-center
-
-                  gap-3
-
-                  p-5
-
-                  rounded-lg
-
-                  bg-green-500/5
-
-                  border
-                  border-green-500/20
-
-                  text-green-400
-
-                  transition-all
-                  duration-300
-
-                  hover:bg-green-500/10
-
-                  hover:border-green-400
-
-                  hover:-translate-y-1
-
-                  hover:shadow-[0_0_20px_rgba(0,255,136,0.2)]
-                "
-
-              >
-
-                <FaGithub
-
-                  size={32}
-
-                  className="
-                    group-hover:scale-110
-
-                    transition
-                  "
-
-                />
-
-                <span className="text-sm">
-                  GitHub
-                </span>
-
-              </a>
-
-
-            </div>
-
-
-
-            {/* Email Address */}
-
-            <div
-
-              className="
-                mt-8
-
-                pt-6
-
-                border-t
-                border-green-500/10
-
-                text-center
-
-                text-sm
-
-                text-gray-500
-              "
-
-            >
-
-              <span className="text-green-400">
-                contact:
-              </span>
-
-              {" "}
-
-              shahid9752.mi@gmail.com
-
-            </div>
 
 
           </div>
+
+
+
+
 
         </div>
 
 
+
+
       </div>
 
+
+
     </section>
+
 
   );
 
