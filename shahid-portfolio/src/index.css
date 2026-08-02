@@ -37,6 +37,7 @@ body {
 
 
 
+
 /* =========================================
    HACKER BACKGROUND
 ========================================= */
@@ -114,7 +115,6 @@ body::before {
 
 
 
-
 /* =========================================
    SELECTION
 ========================================= */
@@ -132,7 +132,6 @@ color:white;
 
 
 }
-
 
 
 
@@ -192,7 +191,6 @@ rgba(0,255,136,0.7);
 
 
 
-
 /* =========================================
    LINKS
 ========================================= */
@@ -203,7 +201,6 @@ a {
 text-decoration:none;
 
 }
-
 
 
 
@@ -331,7 +328,6 @@ box-shadow:
 
 
 
-
 /* =========================================
    3D NEON CARD
 ========================================= */
@@ -383,23 +379,48 @@ box-shadow:
 
 
 
+
 /* =========================================
-   SCROLL REVEAL EFFECT
+   SCROLL REVEAL
 ========================================= */
 
 
 .reveal {
 
 
+opacity:0;
+
+
+transform:
+
+translateY(50px);
+
+
+
 transition:
 
-transform .5s ease,
+opacity .7s ease,
 
-opacity .5s ease,
+transform .7s ease,
 
-box-shadow .5s ease,
+box-shadow .4s ease,
 
-border-color .5s ease;
+border-color .4s ease;
+
+
+}
+
+
+
+.reveal.show {
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0);
 
 
 }
@@ -437,7 +458,6 @@ word-break:normal;
 
 
 
-
 /* =========================================
    BUTTON
 ========================================= */
@@ -454,7 +474,6 @@ transition:.3s ease;
 
 
 }
-
 
 
 
@@ -495,7 +514,7 @@ auto,
 
 
 
-/* Touch neon */
+/* Touch Neon */
 
 
 .group:active {
@@ -522,6 +541,7 @@ rgba(0,255,136,.8);
 
 box-shadow:
 
+
 0 0 40px
 
 rgba(0,255,136,.35);
@@ -534,7 +554,8 @@ rgba(0,255,136,.35);
 
 
 
-/* Scroll neon */
+
+/* Scroll Neon */
 
 
 .reveal.show {
@@ -557,6 +578,7 @@ rgba(0,255,136,.8);
 
 box-shadow:
 
+
 0 0 35px
 
 rgba(0,255,136,.35);
@@ -569,13 +591,14 @@ rgba(0,255,136,.35);
 
 
 
-
 .group:hover {
 
 
 transform:none;
 
+
 }
+
 
 
 
@@ -591,6 +614,7 @@ overflow-x:auto;
 
 
 }
+
 
 
 
@@ -612,7 +636,6 @@ line-height:1.3;
 
 
 }
-
 
 
 

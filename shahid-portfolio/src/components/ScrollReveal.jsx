@@ -22,6 +22,7 @@ function ScrollReveal() {
 
     const observer = new IntersectionObserver(
 
+
       (entries)=>{
 
 
@@ -32,7 +33,7 @@ function ScrollReveal() {
 
 
             entry.target.classList.add(
-              "active"
+              "show"
             );
 
 
@@ -56,7 +57,9 @@ function ScrollReveal() {
 
     elements.forEach((el)=>{
 
+
       observer.observe(el);
+
 
     });
 
@@ -67,7 +70,9 @@ function ScrollReveal() {
 
       elements.forEach((el)=>{
 
+
         observer.unobserve(el);
+
 
       });
 
